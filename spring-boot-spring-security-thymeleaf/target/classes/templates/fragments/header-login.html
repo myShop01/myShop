@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:fragment="header-css">
+	<!-- this is header-css -->
+	<link rel="stylesheet" th:href="@{/css/boosted2015.css}"
+		href="/css/boosted2015.css" />
+
+	<link rel="stylesheet" th:href="@{/css/bootstrap-orange2015.css}"
+		href="/css/bootstrap-orange2015.css" />
+
+</div>
+</head>
+<body>
+	<div th:fragment="header">
+		<!-- this is header -->
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header ">
+					<a th:href="@{/}" title="Orange Belgique Homepage"
+						class="b2c-global-header-logo navbar-brand"> <img
+						th:src="@{/images/ORANGE_LOGO_rgb.jpg}" width="50" height="50"
+						alt="Orange Belgique Logo" />
+					</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse"></div>
+			</div>
+		</nav>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header" />
+	<div class="container">
+
+		<div class="row">
+			<div
+				class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad">
+
+
+				<div class="panel">
+					<div class="panel-body">
+						<div class="row">
+							<div class="col-md-3 col-lg-3 " align="center">
+								<img alt="User Pic"
+									src="http://www.freeiconspng.com/uploads/profile-icon-9.png"
+									class="img-circle img-responsive" />
+							</div>
+						</div>
+
+						<div class=" col-md-12 col-lg-12 ">
+							<table class="table table-user-information">
+								<tbody>
+									<div th:object="${user}">
+									<tr>
+										<td><span th:utext="#{user.firstname.label}" /></td>
+										<td><span th:text="*{name}">Sebastian</span></td>
+									</tr>
+									<tr>
+										<td><span th:text="#{user.lastname.label}" /></td>
+										<td><span th:text="${user.lastName}">Pepper</span></td>
+									</tr>
+									<tr>
+										<td><span th:text="#{user.email.label}" /></td>
+										<td><span
+											th:text="${user.email}?: '(no email specified)'">n.n@gmail.com</span></td>
+									</tr>
+
+
+									<tr>
+										<td><span th:text="#{user.phonenumber.label}" /></td>
+										<td><span
+											th:text="${user.phoneNumber}?: '(no phoneNumber specified)'">555
+												888 777 75</span></td>
+									</tr>
+									<tr>
+										<td><span th:text="#{user.address.label}" /></td>
+										<td><span
+											th:text="${user.address}?: '(no address specified)'">Tunis-Tunisia</span></td>
+									</tr>
+
+									</div>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	<div th:replace="fragments/footer :: footer" />
+</body>
+</html>

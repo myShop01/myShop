@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>User profile</title>
+
+<div th:replace="fragments/header :: header-css" />
+</head>
+<body>
+
+	<div th:replace="fragments/header :: header" />
+
+	<div class="container">
+
+		<h2 th:text="#{user.profile.title}" />
+
+		<div th:object="${user}">
+
+			<p>
+				<span th:utext="#{user.firstname.label}" /> <span th:text="*{name}">Sebastian</span>.
+			</p>
+			<p>
+				<span th:text="#{user.lastname.label}" /> <span
+					th:text="${user.lastName}">Pepper</span>.
+			</p>
+			<p>
+				<span th:text="#{user.email.label}" /> <span
+					th:text="${user.email}?: '(no email specified)'">n.n@gmail.com</span>.
+
+			</p>
+			<p>
+				<span th:text="#{user.phonenumber.label}" /> <span
+					th:text="${user.phoneNumber}?: '(no phoneNumber specified)'">555
+					888 777 75</span>.
+			</p>
+			<p>
+				<span th:text="#{user.address.label}" /> <span
+					th:text="${user.address}?: '(no address specified)'">Tunis-Tunisia</span>.
+
+			</p>
+		</div>
+
+		<p>
+			<a href="home.html" th:href="@{/home}" th:text="#{return.home.label}" />
+		</p>
+	</div>
+	<div th:replace="fragments/footer :: footer" />
+
+</body>
+
+</html>

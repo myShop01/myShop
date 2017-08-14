@@ -1,0 +1,11 @@
+com\sofrecom\myshop\model\User.class
+com\sofrecom\myshop\service\UserServiceImpl.class
+com\sofrecom\myshop\providers\CustomAuthentificationProvider.class
+com\sofrecom\myshop\service\RoleService.class
+com\sofrecom\myshop\controller\DefaultController.class
+com\sofrecom\myshop\config\SpringSecurityConfig.class
+com\sofrecom\myshop\service\RoleServiceImpl.class
+com\sofrecom\myshop\SpringBootWebApplication.class
+com\sofrecom\myshop\service\UserService.class
+com\sofrecom\myshop\model\Role.class
+com\sofrecom\myshop\error\MyAccessDeniedHandler.class
