@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Shop</title>
+
+<link rel="stylesheet"
+	th:href="@{/ressources/boosted/css/orangeHelvetica.css}" />
+<link rel="stylesheet"
+	th:href="@{/ressources/boosted/css/orangeIcons.css}" />
+<link th:href="@{/ressources/boosted/css/bootstrap-orange2015.css}"
+	rel="stylesheet">
+<link th:href="@{/ressources/boosted/css/boosted2015.css}"
+	rel="stylesheet">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+	rel="stylesheet">
+
+<link th:href="@{/ressources/noUiSlider/nouislider.min.css}"
+	rel="stylesheet">
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+
+<style>
+.panel .panel-body{
+	padding: 0;
+}
+
+.panel.panel-default {
+	padding: 0;
+}
+
+.section {
+	padding: 10px 20px;
+	border-bottom: 1px solid #d5d5d5;
+}
+</style>
+</head>
+
+<body>
+
+
+
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#"> <img alt="Brand"
+					th:src="@{/ressources/boosted/img/ORANGE_LOGO_rgb.jpg}"> <span
+					class="navbar-brand-text">YourShop</span>
+				</a>
+			</div>
+		</div>
+	</nav>
+
+	<br />
+	<br />
+<div class="col-md-1"></div>
+<div class="col-md-10">
+	<div role="tabpanel">
+		<ul class="nav nav-tabs" role="tablist">
+			<li role="presentation"
+				th:class="${activetab}=='all' ? active : notactive"><a
+				th:href="@{/products}" data-toggle="tab" aria-controls="All"
+				role="tab"> Tous les produits </a></li>
+			<li role="presentation"
+				th:class="${activetab}=='iphones' ? active : notactive"><a
+				th:href="@{/iphones}" data-toggle="tab" aria-controls="Iphones"
+				role="tab"> Iphones </a></li>
+			<li role="presentation"
+				th:class="${activetab}=='smartphones' ? active : notactive"><a
+				th:href="@{/smartphones}" data-toggle="tab"
+				aria-controls="Smartphones" role="tab"> Smartphones </a></li>
+			<li role="presentation"
+				th:class="${activetab}=='tablettes' ? active : notactive"><a
+				th:href="@{/tablettes}" data-toggle="tab" aria-controls="Tablettes"
+				role="tab"> Tablettes </a></li>
+		</ul>
+	</div>
+
+
+	<br />
+
+	<!-- <div class="row panel panel-default col-sm-6 col-md-12" style="border: 1.5pt solid #000">
+		<div class="panel-body">
+			<h4>Affinez vos resultats</h4>
+		</div>
+	</div> -->
+
+	<br />
+
+	<div class="row col-sm-6 col-md-9">
+		<div class="col-sm-6 col-md-4" th:each="product : ${products}">
+			<div class="thumbnail">
+				<img th:src="@{'/ressources/images/'+${product.url}}"
+					style="height: 180pt;">
+				<div class="caption">
+					<h3 th:text="${product.brand}+' '+${product.name}">Phone Name</h3>
+					<h4>
+						&euro; <span th:text="${product.price}">00.00</span>
+					</h4>
+					<p>
+						<a href="detail.html" th:href="@{/details(id=${product.id})}"
+							class="btn btn-primary" role="button">Details</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default col-sm-6 col-md-3"
+		style="border: 1.5pt solid #000">
+		<div class="panel-body">
+
+			<div class="section">
+				<h4>Affinez vos resultats</h4>
+				<div class="input-group">
+					<input type="text" class="form-control">
+					<div class="input-group-btn">
+						<button type="button" class="btn btn-default" aria-label="Help">
+							<span class="icon-search"></span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<h5>Prix</h5>
+				<div id="container">
+					<div id="noUiSlider"></div>
+					&euro; <span id="slider-snap-value-lower">0</span> <span
+						style="float: right">&euro; <span
+						id="slider-snap-value-upper">2000</span></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+	<script>
+		$(function() {
+			$("#noUiSlider").noUiSlider({
+				connect : true,
+				start : [ 0, 2000 ],
+				range : {
+					'min' : 0,
+					'max' : 2000
+				},
+				step : 10
+			});
+		});
+
+		$("#noUiSlider").on('slide', function(values, handle) {
+			$("#slider-snap-value-lower").text($(this).val()[0]);
+			$("#slider-snap-value-upper").text($(this).val()[1]);
+		});
+	</script>
+
+	<script th:src="@{/ressources/boosted/js/boosted.js}"></script>
+
+</body>
+</html>
