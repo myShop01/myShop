@@ -1,4 +1,4 @@
-package com.model;
+package com.sofrecom.myshop.model;
 
 public class Product {
 	

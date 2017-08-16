@@ -1,3 +1,13 @@
-D:\sofrecom\workshops\02082017_initiation\workspace\shop\src\com\utils\Shop.java
-D:\sofrecom\workshops\02082017_initiation\workspace\shop\src\com\model\Product.java
-D:\sofrecom\workshops\02082017_initiation\workspace\shop\src\com\controller\ShopController.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\RoleServiceImpl.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\model\Role.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\UserService.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\providers\CustomAuthentificationProvider.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\utils\Shop.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\model\Product.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\error\MyAccessDeniedHandler.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\controller\DefaultController.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\controller\ShopController.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\model\User.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\RoleService.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\config\SpringSecurityConfig.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\UserServiceImpl.java
