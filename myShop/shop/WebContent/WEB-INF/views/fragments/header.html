@@ -8,20 +8,16 @@
 		rel="stylesheet">
 
 	<link th:href="@{/ressources/boosted/css/main.css}" rel="stylesheet">
-<<<<<<< HEAD
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script th:src="@{/ressources/boosted/js/boosted.js}"></script>
-=======
->>>>>>> 0ca388c77c403db87f48efe68c3b54d5ea840ac7
 
 </div>
 </head>
 <body>
 	<div th:fragment="header" class="b2c-global-header-container">
 		<!-- this is header -->
-<<<<<<< HEAD
 		<nav class="navbar navbar-default">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
@@ -53,41 +49,17 @@
 		</nav>
 
 
-		<div class="page-header-bgd-green">
-			<div class="container">
-				<h1 th:text="#{orange.shops.title}" />
-=======
-		<nav class="navbar navbar-inverse">
-			<div class="container">
-				<div class="navbar-header ">
-					<a th:href="@{/}" title="Orange Belgique Homepage"
-						class="b2c-global-header-logo navbar-brand"> <img
-						th:src="@{/ressources/boosted/img/ORANGE_LOGO_rgb.jpg}" width="50"
-						height="50" alt="Orange Belgique Logo" />
-					</a>
-				</div>
-				<div id="navbar" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav">
-						<li><a th:href="@{/home}" th:text="#{home.menu.label}" /></li>
-						<li><a th:href="@{/products}"
-							th:text="#{products.menu.label}" /></li>
-						<li><a th:href="@{/userprofile}"
-							th:text="#{user.profile.menu.label}" /></li>
-					</ul>
-					<a class="logout-button" th:href="@{/logout}"
-						th:text="#{button.logout.label}" />
-				</div>
-			</div>
-		</nav>
 		<div class="page-header-bgd-green col-xs-12 col-md-12">
 			<div class="container row">
-				<div class="col-xs-12 col-sm-7 col-md-7 col-xs-offset-0 col-sm-offset-1 col-md-offset-1">
-					<h1 th:text="#{orange.shops.title}"/>
+				<div
+					class="col-xs-12 col-sm-7 col-md-7 col-xs-offset-0 col-sm-offset-1 col-md-offset-1">
+					<h1 th:text="#{orange.shops.title}" />
 				</div>
 				<div class="hidden-xs col-sm-4 col-md-4 image">
-					<img th:src="@{/ressources/boosted/img/header-shops-1.png}" style="height:100%; margin:0;"/>
+					<img th:src="@{/ressources/boosted/img/header-shops-1.png}"
+						style="height: 100%; margin: 0;" />
 				</div>
->>>>>>> 0ca388c77c403db87f48efe68c3b54d5ea840ac7
+
 			</div>
 		</div>
 	</div>

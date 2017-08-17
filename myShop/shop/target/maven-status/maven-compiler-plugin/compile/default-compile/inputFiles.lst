@@ -1,11 +1,12 @@
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\RoleServiceImpl.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\model\Role.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\ProductServiceImpl.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\UserService.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\providers\CustomAuthentificationProvider.java
-D:\mnfaidh\github\myShop\myShop\shop\src\com\utils\Shop.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\model\Product.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\error\MyAccessDeniedHandler.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\controller\DefaultController.java
+D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\ProductIService.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\controller\ShopController.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\model\User.java
 D:\mnfaidh\github\myShop\myShop\shop\src\com\sofrecom\myshop\service\RoleService.java
