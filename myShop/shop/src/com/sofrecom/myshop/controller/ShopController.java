@@ -1,20 +1,28 @@
 package com.sofrecom.myshop.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 import com.sofrecom.myshop.model.Product;
+import com.sofrecom.myshop.service.ProductIService;
 
 @Controller
 public class ShopController {
+	
+	@Autowired
+	ProductIService productService;
+	
+	
+	String produc = "products";
+	String activetab = "activetab";
+	String marques = "marques";
+	String appareilsPhotos = "appareilsPhotos";
+	String rams = "rams";
 	
 //	@RequestMapping(value = "/", method = RequestMethod.GET)
 //    public String redirect(Model model) {
@@ -23,45 +31,54 @@ public class ShopController {
 	
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
     public String produits(Model model) {
-		RestTemplate restTemplate = new RestTemplate();
-		List<Product> prods = restTemplate.getForObject("http://localhost:3000/products", List.class);
-        model.addAttribute("products", prods);
-        model.addAttribute("activetab", "all");
+		Product[] products = productService.findAll();
+        model.addAttribute(produc, products);
+        model.addAttribute(activetab, "all");
+        model.addAttribute(marques, productService.findBrands(products));
+        model.addAttribute(rams, productService.findRams(products));
+        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(products));
         return "shop";
     }
 	
 	
 	@RequestMapping(value = "/iphones", method = RequestMethod.GET)
-    public String iphones(Model model) {
-		RestTemplate restTemplate = new RestTemplate();
-		List<Product> prods = restTemplate.getForObject("http://localhost:3000/products?type=iphones", List.class);
-        model.addAttribute("products", prods);
-        model.addAttribute("activetab", "iphones");
+    public String iphones(@RequestParam(value="pricemin", required=false, defaultValue="0") Long pricemin,
+    		              @RequestParam(value="pricemax", required=false, defaultValue="2000") Long pricemax,
+    		              Model model) {
+		Product[] prods = productService.findByCriteria("type", "iphones");
+        model.addAttribute(produc, prods);
+        model.addAttribute(activetab, "iphones");
+        model.addAttribute(marques, productService.findBrands(prods));
+        model.addAttribute(rams, productService.findRams(prods));
+        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(prods));
         return "shop";
     }
 	
 	@RequestMapping(value = "/smartphones", method = RequestMethod.GET)
     public String smartphones(Model model) {
-		RestTemplate restTemplate = new RestTemplate();
-		List<Product> prods = restTemplate.getForObject("http://localhost:3000/products?type=smartphones", List.class);
-        model.addAttribute("products", prods);
-        model.addAttribute("activetab", "smartphones");
+		Product[] prods = productService.findByCriteria("type", "smartphones");
+        model.addAttribute(produc, prods);
+        model.addAttribute(activetab, "smartphones");
+        model.addAttribute(marques, productService.findBrands(prods));
+        model.addAttribute(rams, productService.findRams(prods));
+        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(prods));
         return "shop";
     }
 	
 	@RequestMapping(value = "/tablettes", method = RequestMethod.GET)
     public String tablettes(Model model) {
-		RestTemplate restTemplate = new RestTemplate();
-		List<Product> prods = restTemplate.getForObject("http://localhost:3000/products?type=tablettes", List.class);
-        model.addAttribute("products", prods);
-        model.addAttribute("activetab", "tablettes");
+		Product[] prods = productService.findByCriteria("type", "tablettes");
+        model.addAttribute(produc, prods);
+        model.addAttribute(activetab, "tablettes");
+        model.addAttribute(marques, productService.findBrands(prods));
+        model.addAttribute(rams, productService.findRams(prods));
+        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(prods));
         return "shop";
     }
 	
 	@RequestMapping(value = "/details", method = RequestMethod.GET)
-    public String detail(@RequestParam(value="id", required=false, defaultValue="0") String id, Model model) {
-		RestTemplate restTemplate = new RestTemplate();
-		Product prod = restTemplate.getForObject("http://localhost:3000/products/"+id, Product.class);
+    public String detail(@RequestParam(value="id", required=false, defaultValue="0") Long id, Model model) {
+		Product prod = productService.findById(id);
 		model.addAttribute("phone", prod);
         return "detail";
     }

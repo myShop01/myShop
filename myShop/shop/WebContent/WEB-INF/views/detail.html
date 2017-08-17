@@ -17,21 +17,14 @@
 	rel="stylesheet">
 <link th:href="@{/ressources/boosted/css/boosted2015.css}"
 	rel="stylesheet">
+	
+	<link th:href="@{/ressources/boosted/css/main.css}"
+		rel="stylesheet">
 </head>
 
 <body>
 
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="/products" th:href="@{/products}">
-					<img alt="Brand"
-					th:src="@{/ressources/boosted/img/ORANGE_LOGO_rgb.jpg}"> <span
-					class="navbar-brand-text">YourShop</span>
-				</a>
-			</div>
-		</div>
-	</nav>
+	<div th:replace="fragments/header :: header"/>
 
 	<br />
 	<br />
@@ -50,7 +43,6 @@
 		        <br/>
 		        <p class="col-xs-1 col-md-1"></p>
 				<h3 class="col-xs-11 col-md-11" th:text="${phone.brand}+' '+${phone.name}" >Phone Name</h3>
-				
 		        <p class="col-xs-1 col-md-1"></p>
 				<p class="col-xs-10 col-md-10" th:text="${phone.description}">Description</p>
 				

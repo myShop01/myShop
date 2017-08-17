@@ -16,10 +16,11 @@ import com.sofrecom.myshop.providers.CustomAuthentificationProvider;
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
-	@Autowired
-	private AccessDeniedHandler accessDeniedHandler;
 
-	@Autowired
+    @Autowired
+    private AccessDeniedHandler accessDeniedHandler;
+    
+    @Autowired
 	private CustomAuthentificationProvider authenticationProvider;
 
 	// roles admin allow to access /admin/**
@@ -46,4 +47,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		//web.ignoring().antMatchers("/resources/**"); // #3
 	}
 
+
+	
 }
