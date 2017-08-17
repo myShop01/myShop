@@ -2,7 +2,9 @@ package com.sofrecom.myshop.model;
 
 public class Product {
 	
-	private Integer id;
+	private Long id;
+	private Long ram;
+	private Long appareilPhoto;
 	private String url;
 	private String name;
 	private String brand;
@@ -13,14 +15,14 @@ public class Product {
     
     
 	public Product() {
-		
+		super();
 	}
 	
 	
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getUrl() {
@@ -63,6 +65,26 @@ public class Product {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+
+	public Long getRam() {
+		return ram;
+	}
+
+
+	public void setRam(Long ram) {
+		this.ram = ram;
+	}
+
+
+	public Long getAppareilPhoto() {
+		return appareilPhoto;
+	}
+
+
+	public void setAppareilPhoto(Long appareilPhoto) {
+		this.appareilPhoto = appareilPhoto;
 	}
 
 

@@ -1,0 +1,12 @@
+.panel .panel-body {
+	padding: 0;
+}
+
+.panel.panel-default {
+	padding: 0;
+}
+
+.section {
+	padding: 10px 20px;
+	border-bottom: 1px solid #d5d5d5;
+}
