@@ -10,37 +10,38 @@ import org.springframework.web.client.RestTemplate;
 import com.sofrecom.myshop.model.User;
 
 @Service("userService")
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
-	
+	public static String REST_URI_PREFIX = "http://localhost:3000";
+
 	@Override
 	public List<User> findUsers() {
 		RestTemplate restTemplate = new RestTemplate();
-        List<User> users = restTemplate.getForObject("http://localhost:3000/users", List.class);
+		List<User> users = restTemplate.getForObject(REST_URI_PREFIX + "/users", List.class);
 		return users;
 	}
 
 	@Override
 	public User findUser(String login, String password) {
 		RestTemplate restTemplate = new RestTemplate();
-	
-        User[] users = restTemplate.getForObject("http://localhost:3000/users?login="+login+"&password="+password, User[].class);
-        if(users.length>0){
-        	List<User> listUsers = Arrays.asList(users); 
-    		return listUsers.get(0);
-        }
-        else{
-        	return null;
-        }
-        
+
+		User[] users = restTemplate.getForObject(REST_URI_PREFIX + "/users?login=" + login + "&password=" + password,
+				User[].class);
+		if (users.length > 0) {
+			List<User> listUsers = Arrays.asList(users);
+			return listUsers.get(0);
+		} else {
+			return null;
+		}
+
 	}
-	
+
 	@Override
 	public User findUser(String login) {
 		RestTemplate restTemplate = new RestTemplate();
-	
-        User[] users = restTemplate.getForObject("http://localhost:3000/users?login="+login, User[].class);
-        List<User> listUsers = Arrays.asList(users); 
+
+		User[] users = restTemplate.getForObject(REST_URI_PREFIX + "/users?login=" + login, User[].class);
+		List<User> listUsers = Arrays.asList(users);
 		return listUsers.get(0);
 	}
 

@@ -17,21 +17,6 @@ public class User {
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public User(int id, String name, String lastName, String login, String password, String email, String phoneNumber,
-			String address, Set<Role> roles) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.lastName = lastName;
-		this.login = login;
-		this.password = password;
-		this.email = email;
-		this.phoneNumber = phoneNumber;
-		this.address = address;
-		this.roles = roles;
 	}
 
 	public int getId() {
