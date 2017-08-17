@@ -1,8 +1,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <div th:replace="fragments/header :: header-css" />
 </head>
 <body>
@@ -29,32 +30,32 @@
 							<table class="table table-user-information">
 								<tbody>
 									<div th:object="${user}">
-									<tr>
-										<td><span th:utext="#{user.firstname.label}" /></td>
-										<td><span th:text="*{name}">Sebastian</span></td>
-									</tr>
-									<tr>
-										<td><span th:text="#{user.lastname.label}" /></td>
-										<td><span th:text="${user.lastName}">Pepper</span></td>
-									</tr>
-									<tr>
-										<td><span th:text="#{user.email.label}" /></td>
-										<td><span
-											th:text="${user.email}?: '(no email specified)'">n.n@gmail.com</span></td>
-									</tr>
+										<tr>
+											<td><span th:utext="#{user.firstname.label}" /></td>
+											<td><span th:text="*{name}">Sebastian</span></td>
+										</tr>
+										<tr>
+											<td><span th:text="#{user.lastname.label}" /></td>
+											<td><span th:text="${user.lastName}">Pepper</span></td>
+										</tr>
+										<tr>
+											<td><span th:text="#{user.email.label}" /></td>
+											<td><span
+												th:text="${user.email}?: '(no email specified)'">n.n@gmail.com</span></td>
+										</tr>
 
 
-									<tr>
-										<td><span th:text="#{user.phonenumber.label}" /></td>
-										<td><span
-											th:text="${user.phoneNumber}?: '(no phoneNumber specified)'">555
-												888 777 75</span></td>
-									</tr>
-									<tr>
-										<td><span th:text="#{user.address.label}" /></td>
-										<td><span
-											th:text="${user.address}?: '(no address specified)'">Tunis-Tunisia</span></td>
-									</tr>
+										<tr>
+											<td><span th:text="#{user.phonenumber.label}" /></td>
+											<td><span
+												th:text="${user.phoneNumber}?: '(no phoneNumber specified)'">555
+													888 777 75</span></td>
+										</tr>
+										<tr>
+											<td><span th:text="#{user.address.label}" /></td>
+											<td><span
+												th:text="${user.address}?: '(no address specified)'">Tunis-Tunisia</span></td>
+										</tr>
 
 									</div>
 								</tbody>
@@ -68,5 +69,6 @@
 		</div>
 	</div>
 	<div th:replace="fragments/footer :: footer" />
+
 </body>
 </html>
