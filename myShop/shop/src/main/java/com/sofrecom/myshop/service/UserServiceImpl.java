@@ -1,7 +1,6 @@
 package com.sofrecom.myshop.service;
 
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -14,11 +13,11 @@ public class UserServiceImpl implements UserService {
 
 	public static String REST_URI_PREFIX = "http://localhost:3000";
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> findUsers() {
 		RestTemplate restTemplate = new RestTemplate();
-		List<User> users = restTemplate.getForObject(REST_URI_PREFIX + "/users", List.class);
-		return users;
+		return restTemplate.getForObject(REST_URI_PREFIX + "/users", List.class);
 	}
 
 	@Override

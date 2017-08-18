@@ -18,26 +18,25 @@ public class ShopController {
 	ProductIService productService;
 	
 	
-	String produc = "products";
-	String activetab = "activetab";
-	String marques = "marques";
-	String appareilsPhotos = "appareilsPhotos";
-	String rams = "rams";
+	public static final String PRODUCT_MODEL = "products";
+	public static final String ACTIVETAB_MODEL = "activetab";
+	public static final String BRANDS_MODEL = "marques";
+	public static final String CAMERA_MODEL = "appareilsPhotos";
+	public static final String RAM_MODEL = "rams";
 	
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
-//    public String redirect(Model model) {
-//        return "redirect:/products";
-//    }
+	public static final String SHOP_URL="shop";
+	public static final String DETAIL_URL="detail";
+	
 	
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
     public String produits(Model model) {
 		Product[] products = productService.findAll();
-        model.addAttribute(produc, products);
-        model.addAttribute(activetab, "all");
-        model.addAttribute(marques, productService.findBrands(products));
-        model.addAttribute(rams, productService.findRams(products));
-        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(products));
-        return "shop";
+        model.addAttribute(PRODUCT_MODEL, products);
+        model.addAttribute(ACTIVETAB_MODEL, "all");
+        model.addAttribute(BRANDS_MODEL, productService.findBrands(products));
+        model.addAttribute(RAM_MODEL, productService.findRams(products));
+        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(products));
+        return SHOP_URL;
     }
 	
 	
@@ -46,41 +45,41 @@ public class ShopController {
     		              @RequestParam(value="pricemax", required=false, defaultValue="2000") Long pricemax,
     		              Model model) {
 		Product[] prods = productService.findByCriteria("type", "iphones");
-        model.addAttribute(produc, prods);
-        model.addAttribute(activetab, "iphones");
-        model.addAttribute(marques, productService.findBrands(prods));
-        model.addAttribute(rams, productService.findRams(prods));
-        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(prods));
-        return "shop";
+        model.addAttribute(PRODUCT_MODEL, prods);
+        model.addAttribute(ACTIVETAB_MODEL, "iphones");
+        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
+        model.addAttribute(RAM_MODEL, productService.findRams(prods));
+        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(prods));
+        return SHOP_URL;
     }
 	
 	@RequestMapping(value = "/smartphones", method = RequestMethod.GET)
     public String smartphones(Model model) {
 		Product[] prods = productService.findByCriteria("type", "smartphones");
-        model.addAttribute(produc, prods);
-        model.addAttribute(activetab, "smartphones");
-        model.addAttribute(marques, productService.findBrands(prods));
-        model.addAttribute(rams, productService.findRams(prods));
-        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(prods));
-        return "shop";
+        model.addAttribute(PRODUCT_MODEL, prods);
+        model.addAttribute(ACTIVETAB_MODEL, "smartphones");
+        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
+        model.addAttribute(RAM_MODEL, productService.findRams(prods));
+        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(prods));
+        return SHOP_URL;
     }
 	
 	@RequestMapping(value = "/tablettes", method = RequestMethod.GET)
     public String tablettes(Model model) {
 		Product[] prods = productService.findByCriteria("type", "tablettes");
-        model.addAttribute(produc, prods);
-        model.addAttribute(activetab, "tablettes");
-        model.addAttribute(marques, productService.findBrands(prods));
-        model.addAttribute(rams, productService.findRams(prods));
-        model.addAttribute(appareilsPhotos, productService.findAppereilPhotos(prods));
-        return "shop";
+        model.addAttribute(PRODUCT_MODEL, prods);
+        model.addAttribute(ACTIVETAB_MODEL, "tablettes");
+        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
+        model.addAttribute(RAM_MODEL, productService.findRams(prods));
+        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(prods));
+        return SHOP_URL;
     }
 	
 	@RequestMapping(value = "/details", method = RequestMethod.GET)
     public String detail(@RequestParam(value="id", required=false, defaultValue="0") Long id, Model model) {
 		Product prod = productService.findById(id);
 		model.addAttribute("phone", prod);
-        return "detail";
+        return DETAIL_URL;
     }
 	
 }
