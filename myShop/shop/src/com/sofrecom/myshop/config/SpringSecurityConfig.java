@@ -16,11 +16,10 @@ import com.sofrecom.myshop.providers.CustomAuthentificationProvider;
 @EnableWebSecurity
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 
+	@Autowired
+	private AccessDeniedHandler accessDeniedHandler;
 
-    @Autowired
-    private AccessDeniedHandler accessDeniedHandler;
-    
-    @Autowired
+	@Autowired
 	private CustomAuthentificationProvider authenticationProvider;
 
 	// roles admin allow to access /admin/**
@@ -29,24 +28,22 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
-		http.csrf().disable().authorizeRequests().antMatchers("/ressources/**").permitAll().antMatchers("/home").hasAnyRole("ADMIN", "USER")
-				.antMatchers("/admin/**").hasAnyRole("ADMIN").antMatchers("/userprofile/**").hasAnyRole("USER")
-				.anyRequest().authenticated().and().formLogin().defaultSuccessUrl("/home", true).loginPage("/login")
-				.failureUrl("/login?error").permitAll().and().logout().permitAll().and().exceptionHandling()
-				.accessDeniedHandler(accessDeniedHandler);
+		http.csrf().disable().authorizeRequests().antMatchers("/ressources/**").permitAll()
+				.antMatchers("/home", "/userprofile/**").hasAnyRole("ADMIN", "USER").antMatchers("/admin/**")
+				.hasAnyRole("ADMIN").anyRequest().authenticated().and().formLogin().defaultSuccessUrl("/home", true)
+				.loginPage("/login").failureUrl("/login?error").permitAll().and().logout().permitAll().and()
+				.exceptionHandling().accessDeniedHandler(accessDeniedHandler);
 
 	}
 
 	@Autowired
-	public void configureGlobal(AuthenticationManagerBuilder auth){
+	public void configureGlobal(AuthenticationManagerBuilder auth) {
 		auth.authenticationProvider(authenticationProvider);
 	}
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		//web.ignoring().antMatchers("/resources/**"); // #3
+		// web.ignoring().antMatchers("/resources/**"); // #3
 	}
 
-
-	
 }
