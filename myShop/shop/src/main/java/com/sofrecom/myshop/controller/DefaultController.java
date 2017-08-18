@@ -1,5 +1,6 @@
 package com.sofrecom.myshop.controller;
 
+import java.security.Principal;
 import java.util.Locale;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,31 +57,17 @@ public class DefaultController {
 	}
 
 	@GetMapping("/")
-	public String defaultPage(Model m) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (authentication != null) {
-			String login = authentication.getName();
-			User user = userService.findUser(login);
-
-			m.addAttribute(user);
-			return "/home";
-		}
-
-		return "/login";
+	public String defaultPage(final Principal principal) {
+		if (null == principal)
+			return "login";
+		return "/home";
 	}
 
 	@GetMapping("/login")
-	public String login(Model m) {
-		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		if (authentication != null) {
-			String login = authentication.getName();
-			User user = userService.findUser(login);
-
-			m.addAttribute(user);
-			return "/home";
-		}
-
-		return "/login";
+	public String login(final Principal principal) {
+		if (null == principal)
+			return "login";
+		return "/home";
 	}
 
 	@GetMapping("/403")
