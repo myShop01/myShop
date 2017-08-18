@@ -11,7 +11,7 @@ import com.sofrecom.myshop.model.User;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
-	public static String REST_URI_PREFIX = "http://localhost:3000";
+	public static final String REST_URI_PREFIX = "http://localhost:3000";
 
 	@SuppressWarnings("unchecked")
 	@Override
