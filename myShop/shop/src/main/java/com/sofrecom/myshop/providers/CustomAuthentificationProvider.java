@@ -29,7 +29,7 @@ public class CustomAuthentificationProvider implements AuthenticationProvider {
 		if (user != null) {
 			List<GrantedAuthority> grantedAuths = new ArrayList<>();
 
-			user.getRoles().forEach(role -> grantedAuths.add(new SimpleGrantedAuthority(role.getRole())));
+			user.getRoles().forEach(role -> grantedAuths.add(new SimpleGrantedAuthority(role.getValue())));
 
 			return new UsernamePasswordAuthenticationToken(login, password, grantedAuths);
 
