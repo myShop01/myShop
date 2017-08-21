@@ -12,6 +12,8 @@ public class Product {
 	private String description;
 	private Boolean isAvailable;
 	private String type;
+	private int segmentAge;
+	private String segmentGender;
 
 	public Product() {
 		super();
@@ -97,11 +99,28 @@ public class Product {
 		this.type = type;
 	}
 
+	public int getSegmentAge() {
+		return segmentAge;
+	}
+
+	public void setSegmentAge(int segmentAge) {
+		this.segmentAge = segmentAge;
+	}
+
+	public String getSegmentGender() {
+		return segmentGender;
+	}
+
+	public void setSegmentGender(String segmentGender) {
+		this.segmentGender = segmentGender;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", ram=" + ram + ", appareilPhoto=" + appareilPhoto + ", url=" + url + ", name="
 				+ name + ", brand=" + brand + ", price=" + price + ", description=" + description + ", isAvailable="
-				+ isAvailable + ", type=" + type + "]";
+				+ isAvailable + ", type=" + type + ", segmentAge=" + segmentAge + ", segmentGender=" + segmentGender
+				+ "]";
 	}
 
 }

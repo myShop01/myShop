@@ -1,11 +1,9 @@
 package com.sofrecom.myshop.model;
 
 import java.sql.Date;
-import java.util.List;
 
 public class Promotion {
 
-	private List<Long> productsIDs;
 	private Date startDate;
 	private Date endDate;
 	private String description;
@@ -15,35 +13,6 @@ public class Promotion {
 	 */
 	public Promotion() {
 		super();
-	}
-
-	/**
-	 * @param productsIDs
-	 * @param startDate
-	 * @param endDate
-	 * @param description
-	 */
-	public Promotion(List<Long> productsIDs, Date startDate, Date endDate, String description) {
-		super();
-		this.productsIDs = productsIDs;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.description = description;
-	}
-
-	/**
-	 * @return the productsIDs
-	 */
-	public List<Long> getProductsIDs() {
-		return productsIDs;
-	}
-
-	/**
-	 * @param productsIDs
-	 *            the productsIDs to set
-	 */
-	public void setProductsIDs(List<Long> productsIDs) {
-		this.productsIDs = productsIDs;
 	}
 
 	/**
@@ -91,15 +60,9 @@ public class Promotion {
 		this.description = description;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return "Promotion [productsIDs=" + productsIDs + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", description=" + description + "]";
+		return "Promotion [startDate=" + startDate + ", endDate=" + endDate + ", description=" + description + "]";
 	}
 
 }

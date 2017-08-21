@@ -1,14 +1,10 @@
 package com.sofrecom.myshop.model;
 
-import java.sql.Date;
 
-public class SpecificPromotion {
+public class SpecificPromotion extends Promotion {
 
 	private Long id;
 	private Double price;
-	private Date startDate;
-	private Date endDate;
-	private String description;
 
 	/**
 	 * default constructor
@@ -22,17 +18,11 @@ public class SpecificPromotion {
 	 * 
 	 * @param id
 	 * @param price
-	 * @param startDate
-	 * @param endDate
-	 * @param description
 	 */
-	public SpecificPromotion(Long id, Double price, Date startDate, Date endDate, String description) {
+	public SpecificPromotion(Long id, Double price) {
 		super();
 		this.id = id;
 		this.price = price;
-		this.startDate = startDate;
-		this.endDate = endDate;
-		this.description = description;
 	}
 
 	/**
@@ -65,51 +55,6 @@ public class SpecificPromotion {
 		this.price = price;
 	}
 
-	/**
-	 * @return the startDate
-	 */
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	/**
-	 * @param startDate
-	 *            the startDate to set
-	 */
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	/**
-	 * @return the endDate
-	 */
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	/**
-	 * @param endDate
-	 *            the endDate to set
-	 */
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	/**
-	 * @return the description
-	 */
-	public String getDescription() {
-		return description;
-	}
-
-	/**
-	 * @param description
-	 *            the description to set
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -117,8 +62,7 @@ public class SpecificPromotion {
 	 */
 	@Override
 	public String toString() {
-		return "SpecificPromotion [id=" + id + ", price=" + price + ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", description=" + description + "]";
+		return "SpecificPromotion [id=" + id + ", price=" + price + "]";
 	}
 
 }
