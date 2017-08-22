@@ -52,7 +52,7 @@ public class ShopTestController {
 	public void testIphones(){
 		
 		ExtendedModelMap model = new ExtendedModelMap();
-		String viewName = controller.iphones(Long.valueOf(0), Long.valueOf(2000), model);
+		String viewName = controller.accessories(model);
 
 		Product[] products = (Product[]) model.get("products");
 		assertNotNull(products);
