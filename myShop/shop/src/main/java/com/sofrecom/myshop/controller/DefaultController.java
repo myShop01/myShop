@@ -36,10 +36,6 @@ public class DefaultController {
 		return "admin";
 	}
 
-	@GetMapping("/user")
-	public String user() {
-		return "user";
-	}
 
 	@GetMapping("/userprofile")
 	public String userprofile(Model m) {

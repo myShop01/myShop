@@ -1,6 +1,5 @@
 package com.sofrecom.myshop.service;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -23,25 +22,30 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findUser(String login, String password) {
 		RestTemplate restTemplate = new RestTemplate();
+		User user = new User();
 
 		User[] users = restTemplate.getForObject(REST_URI_PREFIX + "/users?login=" + login + "&password=" + password,
 				User[].class);
 		if (users.length > 0) {
-			List<User> listUsers = Arrays.asList(users);
-			return listUsers.get(0);
-		} else {
-			return null;
+			user = users[0];
 		}
+
+		return user;
 
 	}
 
 	@Override
 	public User findUser(String login) {
 		RestTemplate restTemplate = new RestTemplate();
+		User user = new User();
 
 		User[] users = restTemplate.getForObject(REST_URI_PREFIX + "/users?login=" + login, User[].class);
-		List<User> listUsers = Arrays.asList(users);
-		return listUsers.get(0);
+
+		if (users.length > 0) {
+			user = users[0];
+		}
+
+		return user;
 	}
 
 }
