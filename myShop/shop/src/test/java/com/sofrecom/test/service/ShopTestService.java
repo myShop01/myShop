@@ -13,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.sofrecom.myshop.model.Product;
+import com.sofrecom.myshop.service.ProductIService;
 import com.sofrecom.myshop.service.ProductServiceImpl;
 
 @RunWith(SpringRunner.class)
@@ -21,7 +22,7 @@ import com.sofrecom.myshop.service.ProductServiceImpl;
 public class ShopTestService {
 	
 	@Autowired
-	private ProductServiceImpl service;
+	private ProductIService service;
 
 	@Test
 	public void testAll() {
