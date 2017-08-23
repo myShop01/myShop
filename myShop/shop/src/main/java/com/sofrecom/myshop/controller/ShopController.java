@@ -19,10 +19,7 @@ public class ShopController {
 	
 	
 	public static final String PRODUCT_MODEL = "products";
-	public static final String ACTIVETAB_MODEL = "activetab";
 	public static final String BRANDS_MODEL = "marques";
-	public static final String CAMERA_MODEL = "appareilsPhotos";
-	public static final String RAM_MODEL = "rams";
 	
 	public static final String SHOP_URL="shop";
 	public static final String DETAIL_URL="detail";
@@ -32,10 +29,7 @@ public class ShopController {
     public String produits(Model model) {
 		Product[] products = productService.findAll();
         model.addAttribute(PRODUCT_MODEL, products);
-        model.addAttribute(ACTIVETAB_MODEL, "all");
         model.addAttribute(BRANDS_MODEL, productService.findBrands(products));
-        model.addAttribute(RAM_MODEL, productService.findRams(products));
-        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(products));
         return SHOP_URL;
     }
 	
@@ -46,10 +40,7 @@ public class ShopController {
     		              Model model) {
 		Product[] prods = productService.findByCriteria("type", "iphones");
         model.addAttribute(PRODUCT_MODEL, prods);
-        model.addAttribute(ACTIVETAB_MODEL, "iphones");
         model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
-        model.addAttribute(RAM_MODEL, productService.findRams(prods));
-        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(prods));
         return SHOP_URL;
     }
 	
@@ -57,10 +48,7 @@ public class ShopController {
     public String smartphones(Model model) {
 		Product[] prods = productService.findByCriteria("type", "smartphones");
         model.addAttribute(PRODUCT_MODEL, prods);
-        model.addAttribute(ACTIVETAB_MODEL, "smartphones");
         model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
-        model.addAttribute(RAM_MODEL, productService.findRams(prods));
-        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(prods));
         return SHOP_URL;
     }
 	
@@ -68,10 +56,7 @@ public class ShopController {
     public String tablettes(Model model) {
 		Product[] prods = productService.findByCriteria("type", "tablettes");
         model.addAttribute(PRODUCT_MODEL, prods);
-        model.addAttribute(ACTIVETAB_MODEL, "tablettes");
         model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
-        model.addAttribute(RAM_MODEL, productService.findRams(prods));
-        model.addAttribute(CAMERA_MODEL, productService.findAppereilPhotos(prods));
         return SHOP_URL;
     }
 	
@@ -80,6 +65,11 @@ public class ShopController {
 		Product prod = productService.findById(id);
 		model.addAttribute("phone", prod);
         return DETAIL_URL;
+    }
+	
+	@RequestMapping(value = "/testMenu", method = RequestMethod.GET)
+    public String testmenu(@RequestParam(value="id", required=false, defaultValue="0") Long id, Model model) {
+        return "testmenu";
     }
 	
 }

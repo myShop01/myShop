@@ -43,33 +43,6 @@
 
 	<div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
 
-		<br />
-		<!-- 		<h2 class="col-sm-12 col-md-12">SmartPhones & Tablettes</h2> -->
-
-		<!-- 		<br /> -->
-
-		<!-- <div role="tabpanel">
-			<ul class="nav nav-tabs" role="tablist">
-				<li role="presentation"
-					th:class="${activetab}=='all' ? active : notactive"><a
-					th:href="@{/products}" data-toggle="tab" aria-controls="All"
-					role="tab"> Tous les produits </a></li>
-				<li role="presentation"
-					th:class="${activetab}=='iphones' ? active : notactive"><a
-					th:href="@{/iphones}" data-toggle="tab" aria-controls="Iphones"
-					role="tab"> Iphones </a></li>
-				<li role="presentation"
-					th:class="${activetab}=='smartphones' ? active : notactive"><a
-					th:href="@{/smartphones}" data-toggle="tab"
-					aria-controls="Smartphones" role="tab"> Smartphones </a></li>
-				<li role="presentation"
-					th:class="${activetab}=='tablettes' ? active : notactive"><a
-					th:href="@{/tablettes}" data-toggle="tab" aria-controls="Tablettes"
-					role="tab"> Tablettes </a></li>
-			</ul>
-		</div> -->
-
-
 		<br /> <br />
 
 		<div class="col-sm-12 col-md-3">
@@ -165,7 +138,7 @@
 
 					<div>
 						<h6>
-							<span style="color: orange;"> 0 produits</span> correspond a votre
+							<span style="color: orange;"> <span th:text="${products.length}">0 </span> produits</span> correspond a votre
 							recherche.
 						</h6>
 					</div>
@@ -173,7 +146,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4"
+				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4"
 					th:each="product : ${products}">
 					<div class="thumbnail">
 						<img th:src="@{'/ressources/images/'+${product.url}}"
@@ -194,15 +167,11 @@
 			</div>
 			<nav aria-label="Page navigation">
 				<ul class="pagination">
-					<li class="bordered disabled"><a href="#"> <span
+					<li class="bordered"><a href="#"> <span
 							aria-hidden="true" class="icon-arrow-previous"></span> <span
 							class="sr-only">previous</span>
 					</a></li>
-					<li class="active"><a href="#">1</a></li>
-					<li><a href="#">2</a></li>
-					<li><a href="#">3</a></li>
-					<li><a href="#">4</a></li>
-					<li><a href="#">5</a></li>
+					<li><a href="#">1</a></li>
 					<li class="bordered"><a href="#"> <span aria-hidden="true"
 							class="icon-arrow-next"></span> <span class="sr-only">next</span>
 					</a></li>
@@ -237,6 +206,11 @@
 							+ $(this).val()[0].split('.')[0] + '&pricemax='
 							+ $(this).val()[1].split('.')[0]);
 				});*/
+				
+				
+				$(function() {
+					
+				});
 	</script>
 
 
