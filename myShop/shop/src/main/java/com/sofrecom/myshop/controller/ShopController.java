@@ -1,6 +1,8 @@
 package com.sofrecom.myshop.controller;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.sofrecom.myshop.model.Product;
+import com.sofrecom.myshop.service.CategoryService;
 import com.sofrecom.myshop.service.ProductIService;
 
 @Controller
@@ -17,9 +20,16 @@ public class ShopController {
 	@Autowired
 	ProductIService productService;
 	
+	@Autowired
+	CategoryService categoryService;
+	
 	
 	public static final String PRODUCT_MODEL = "products";
 	public static final String BRANDS_MODEL = "marques";
+	
+	public static final String ACCESSORIES_CHECKED = "accessories_checked";
+	public static final String TABLETS_CHECKED = "tablets_checked";
+	public static final String SMARTPHONES_CHECKED = "smartphones_checked";
 	
 	public static final String SHOP_URL="shop";
 	public static final String DETAIL_URL="detail";
@@ -34,29 +44,30 @@ public class ShopController {
     }
 	
 	
-	@RequestMapping(value = "/iphones", method = RequestMethod.GET)
-    public String iphones(@RequestParam(value="pricemin", required=false, defaultValue="0") Long pricemin,
-    		              @RequestParam(value="pricemax", required=false, defaultValue="2000") Long pricemax,
-    		              Model model) {
-		Product[] prods = productService.findByCriteria("type", "iphones");
+	@RequestMapping(value = "/accessories", method = RequestMethod.GET)
+    public String accessories(Model model) {
+		List<Product> prods = categoryService.findProductsByCategory("accessories");
         model.addAttribute(PRODUCT_MODEL, prods);
-        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
+        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods.toArray(new Product[prods.size()])));
+        model.addAttribute(ACCESSORIES_CHECKED,true);
         return SHOP_URL;
     }
 	
 	@RequestMapping(value = "/smartphones", method = RequestMethod.GET)
     public String smartphones(Model model) {
-		Product[] prods = productService.findByCriteria("type", "smartphones");
+		List<Product> prods = categoryService.findProductsByCategory("smartphones");
         model.addAttribute(PRODUCT_MODEL, prods);
-        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
+        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods.toArray(new Product[prods.size()])));
+        model.addAttribute(SMARTPHONES_CHECKED,true);
         return SHOP_URL;
     }
 	
-	@RequestMapping(value = "/tablettes", method = RequestMethod.GET)
+	@RequestMapping(value = "/tablets", method = RequestMethod.GET)
     public String tablettes(Model model) {
-		Product[] prods = productService.findByCriteria("type", "tablettes");
+		List<Product> prods = categoryService.findProductsByCategory("smartphones");
         model.addAttribute(PRODUCT_MODEL, prods);
-        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods));
+        model.addAttribute(BRANDS_MODEL, productService.findBrands(prods.toArray(new Product[prods.size()])));
+        model.addAttribute(TABLETS_CHECKED,true);
         return SHOP_URL;
     }
 	

@@ -62,25 +62,25 @@
 						</div>
 					</div>
 
-					<div class="section" th:if="${marques.size()}>1">
+					<div class="section">
 						<h5>Categorie</h5>
 						<form id="categoryForm">
 							<div class="checkbox">
-							    <label><input type="checkbox" name="brand">Smartphones</label>
+							    <label><input type="checkbox" name="brand" th:checked="${smartphones_checked}">Smartphones</label>
 							</div>
 							<div class="checkbox">
-							    <label><input type="checkbox" name="brand">Tablettes</label>
+							    <label><input type="checkbox" name="brand" th:checked="${tablets_checked}">Tablettes</label>
 							</div>
 							<div class="checkbox">
-								<label><input type="checkbox" name="brand">Accessoires</label>
+								<label><input type="checkbox" name="brand" th:checked="${accessories_checked}">Accessoires</label>
 							</div>
 						</form>
 					</div>
 
-					<div class="section" th:if="${marques.size()}>1">
+					<div class="section">
 						<h5>Marque</h5>
 						<form id="brandForm">
-							<div class="checkbox" th:each="marque : ${marques}">
+							<div class="checkbox" th:each="marque : ${marques}" >
 								<label><input type="checkbox" name="brand"
 									th:value="${marque}"><span th:text="${marque}">option</span></label>
 							</div>
@@ -200,6 +200,7 @@
 			$("#slider-snap-value-lower").text($(this).val()[0]);
 			$("#slider-snap-value-upper").text($(this).val()[1]);
 		});
+		
 
 		/*$("#noUiSlider").on('change', function(values, handle) {
 					window.location.replace(window.location.href.split('?')[0] + '?pricemin='
