@@ -18,6 +18,7 @@ import com.sofrecom.myshop.service.UserService;
 public class DefaultController {
 	
 	private static final String HOME_PAGE ="home";
+	private static final String USER_NAME ="username";
 
 	@Autowired
 	UserService userService;
@@ -27,7 +28,7 @@ public class DefaultController {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 		String name = auth.getName(); // get logged in username
 
-		m.addAttribute("username", name);
+		m.addAttribute(USER_NAME, name);
 		return HOME_PAGE;
 	}
 
@@ -35,7 +36,6 @@ public class DefaultController {
 	public String admin() {
 		return "admin";
 	}
-
 
 	@GetMapping("/userprofile")
 	public String userprofile(Model m) {
@@ -49,17 +49,31 @@ public class DefaultController {
 
 
 	@GetMapping("/")
-	public String defaultPage(final Principal principal) {
+	public String defaultPage(final Principal principal, Model m) {
 		if (null == principal)
 			return "login";
-		return HOME_PAGE;
+		else{
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			String name = auth.getName(); // get logged in username
+
+			m.addAttribute(USER_NAME, name);
+			return HOME_PAGE;
+		}
+		
 	}
 
 	@GetMapping("/login")
-	public String login(final Principal principal) {
+	public String login(final Principal principal, Model m) {
 		if (null == principal)
 			return "login";
-		return HOME_PAGE;
+		else{
+			Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+			String name = auth.getName(); // get logged in username
+
+			m.addAttribute(USER_NAME, name);
+			return HOME_PAGE;
+		}
+		
 	}
 
 	@GetMapping("/403")
