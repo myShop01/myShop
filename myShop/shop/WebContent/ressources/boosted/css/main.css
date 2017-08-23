@@ -61,6 +61,8 @@ body {
 
 @media ( max-width : 768px) {
 	.dropdown-menu-large {
+		float: none;
+		position: static;
 		margin-left: 0;
 		margin-right: 0;
 		padding: 10px 0px;
@@ -74,6 +76,7 @@ body {
 	.dropdown-menu-large .dropdown-header {
 		padding: 3px 15px !important;
 	}
+	
 }
 
 /**
