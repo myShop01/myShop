@@ -66,13 +66,13 @@
 						<h5>Categorie</h5>
 						<form id="categoryForm">
 							<div class="checkbox">
-							    <label><input type="checkbox" name="brand" th:checked="${smartphones_checked}">Smartphones</label>
+							    <label><input type="checkbox" name="brand" th:checked="${smartphones_checked}" value="smartphones">Smartphones</label>
 							</div>
 							<div class="checkbox">
-							    <label><input type="checkbox" name="brand" th:checked="${tablets_checked}">Tablettes</label>
+							    <label><input type="checkbox" name="brand" th:checked="${tablets_checked}" value="tablettes">Tablettes</label>
 							</div>
 							<div class="checkbox">
-								<label><input type="checkbox" name="brand" th:checked="${accessories_checked}">Accessoires</label>
+								<label><input type="checkbox" name="brand" th:checked="${accessories_checked}" value="accessoires">Accessoires</label>
 							</div>
 						</form>
 					</div>
@@ -138,7 +138,7 @@
 
 					<div>
 						<h6>
-							<span style="color: orange;"> <span th:text="${products.length}">0 </span> produits</span> correspond a votre
+							<span style="color: orange;"> <span th:text="${products.size()}">0 </span> produits</span> correspond a votre
 							recherche.
 						</h6>
 					</div>
@@ -207,11 +207,7 @@
 							+ $(this).val()[0].split('.')[0] + '&pricemax='
 							+ $(this).val()[1].split('.')[0]);
 				});*/
-				
-				
-				$(function() {
-					
-				});
+		
 	</script>
 
 
