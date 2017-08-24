@@ -2,22 +2,26 @@
 	xmlns:th="http://www.thymeleaf.org"
 	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
+
 </head>
 <body>
 	<div th:fragment="footer">
 
-		<div class="container">
+		<footer class="footer">
+			<div class="container">
+				<div class="col-md-6">
+					<p>@ 2017 - All Rights with MyShop</p>
+				</div>
+				<div class="col-md-6">
+					<ul class="bottom_ul">
+						<li>Authors</li>
+						<li>Ibtissem ABBES</li>
+						<li>Mariem NFAIDH</li>
+					</ul>
+				</div>
+			</div>
+		</footer>
 
-			<footer>
-				<!-- this is footer -->
-				<span th:text="#{orange.footer.message}"> | <a th:href="@{/logout}" th:text="#{button.logout.label}"/>
-				</span>
-
-				<script type="text/javascript" th:href="@{/js/boosted.js}"
-					href="../../js/boosted.js"></script>
-
-			</footer>
-		</div>
 
 	</div>
 </body>

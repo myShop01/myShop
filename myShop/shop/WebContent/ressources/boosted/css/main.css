@@ -76,7 +76,9 @@ body {
 	.dropdown-menu-large .dropdown-header {
 		padding: 3px 15px !important;
 	}
-	
+	h1, .h1 {
+		font-size: 2rem;
+	}
 }
 
 /**
@@ -101,14 +103,16 @@ body {
 	/*background: url('../img/header-shops-1.png') no-repeat right bottom*/
 }
 
-.page-header-bgd-green .container .image {
+.page-header-bgd-green .container-fluid .image {
 	padding-bottom: 0;
 	margin-bottom: 0;
-	height: 100%
+	height: 100%;
+	padding-top: 15px;
 }
 
 h1, .h1 {
 	font-size: 3em;
+	padding: 15px 0px;
 }
 
 .user-row {
@@ -143,4 +147,73 @@ h1, .h1 {
 
 .toppad {
 	margin-top: 20px;
+}
+
+/**
+** begin footer
+**/
+body {
+	background-color: #fff;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding-top: 5px;
+	width: 100%;
+	height: 60px;
+	background-color: #000;
+	color: #fff;
+}
+
+.footer p {
+	text-align: left;
+	color: #FFF;
+	padding: 10px 0;
+	margin-bottom: 0px;
+	font-size: 15px
+}
+
+.bottom_ul {
+	list-style-type: none;
+	float: right;
+	margin-bottom: 0px;
+}
+
+.bottom_ul li {
+	float: left;
+	line-height: 40px;
+	font-size: 14px
+}
+
+.bottom_ul li:after {
+	content: "||";
+	color: #FFF;
+	margin-right: 8px;
+	margin-left: 8px;
+}
+
+/**
+** end footer
+**/
+@media ( max-width : 768px) {
+	.dropdown-menu-large {
+		float: none;
+		position: static;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 10px 0px;
+	}
+	.dropdown-menu-large>li {
+		margin-bottom: 30px;
+	}
+	.dropdown-menu-large>li:last-child {
+		margin-bottom: 0;
+	}
+	.dropdown-menu-large .dropdown-header {
+		padding: 3px 15px !important;
+	}
+	h1, .h1 {
+		font-size: 2.4em;
+	}
 }
