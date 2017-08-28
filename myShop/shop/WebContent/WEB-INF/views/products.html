@@ -9,7 +9,7 @@
 
 	<div class="col-sm-12 col-md-9 col-lg-9">
 
-		<div class="panel panel-default col-sm-12 col-md-12"
+		<div class="panel panel-default col-sm-12"
 			style="border: 1.5pt solid #000">
 			<div class="panel-body row">
 				<form class="filterForm">
@@ -44,7 +44,7 @@
 		</div>
 
 <div class="container">
-		<div class="row">
+		<div class="row row-eq display-flex col-sm-12">
 			<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4"
 				th:each="product : ${products}">
 				<div class="thumbnail">
@@ -91,6 +91,19 @@
 	})
 	/*]]>*/
 	</script>
+	
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+	   $(function(){
+		   
+	   }) 
+	/*]]>*/
+	</script>
+	
+	<script th:src="@{/ressources/boosted/js/bootstrap-rowequalizer.js}"></script>
+	<script>  
+	 		$('.row-eq').rowequalizer();
+ 	</script>  
 
 </body>
 </html>

@@ -2,6 +2,11 @@
 <head>
 <div th:fragment="header-css">
 	<!-- this is header-css -->
+
+	<link rel="stylesheet"
+		th:href="@{/ressources/boosted/css/orangeHelvetica.css}" />
+	<link rel="stylesheet"
+		th:href="@{/ressources/boosted/css/orangeIcons.css}" />
 	<link th:href="@{/ressources/boosted/css/bootstrap-orange2015.css}"
 		rel="stylesheet">
 	<link th:href="@{/ressources/boosted/css/boosted2015.css}"
@@ -12,84 +17,95 @@
 	<script th:src="@{/ressources/popper/js/popper.min.js}"></script>
 
 	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script th:src="@{/ressources/boosted/js/boosted.js}"></script>
+	<!-- 	<script -->
+	<!-- 		src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script> -->
+
 
 </div>
 </head>
 <body>
-	<div th:fragment="header" class="b2c-global-header-container">
+	<div th:fragment="header">
 		<!-- this is header -->
-		<nav class="navbar navbar-inverse mega-menu" role="navigation">
-			<div class="container">
+		<nav class="navbar navbar-default navbar-static">
+			<div class="navbar-header">
+				<a th:href="@{/}" title="Orange Belgique Homepage"
+					class="b2c-global-header-logo navbar-brand"> <img
+					th:src="@{/ressources/boosted/img/ORANGE_LOGO_rgb.jpg}" width="50"
+					height="50" alt="Orange Belgique Logo" />
+				</a>
+				<button type="button" data-target="#navbarCollapse"
+					data-toggle="collapse" class="navbar-toggle">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+			</div>
 
-				<div class="navbar-header">
-					<a th:href="@{/}" title="Orange Belgique Homepage"
-						class="b2c-global-header-logo navbar-brand"> <img
-						th:src="@{/ressources/boosted/img/ORANGE_LOGO_rgb.jpg}" width="50"
-						height="50" alt="Orange Belgique Logo" />
-					</a>
-					<button type="button" data-target="#navbarCollapse"
-						data-toggle="collapse" class="navbar-toggle">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</div>
+			<div id="navbarCollapse"
+				class="collapse navbar-collapse js-navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a th:href="@{/home}" th:text="#{home.menu.label}" /></li>
+					<li class="dropdown dropdown-large"><a th:href="@{/products}"
+						class="dropdown-toggle" data-toggle="dropdown"><span
+							th:text="#{products.menu.label}" /> <b class="caret"></b></a>
 
-				<div id="navbarCollapse" class="collapse navbar-collapse">
-					<ul class="nav navbar-nav nav-menu">
-						<li><a th:href="@{/home}" th:text="#{home.menu.label}" /></li>
-						<li class="nav-item dropdown"><a th:href="@{/products}"
-							class="dropdown-toggle" data-toggle="dropdown"> <span
-								class="sr-only">open the </span><span
-								th:text="#{products.menu.label}" /> <b class="caret"
-								aria-hidden="true"></b><span class="sr-only"> menu</span></a>
-							<ul class="dropdown-menu" role="menu">
-								<li>
-									<div class="row">
-										<div class="col-xs-12 col-sm-6 col-md-3">
-											<ul>
-												<li><a id="device" th:href="@{/products}">Appareils</a></li>
+						<div id="navbarCollapse" class="collapse navbar-collapse">
+							<ul class="nav navbar-nav nav-menu">
+								<li><a th:href="@{/home}" th:text="#{home.menu.label}" /></li>
+								<li class="nav-item dropdown"><a th:href="@{/products}"
+									class="dropdown-toggle" data-toggle="dropdown"> <span
+										class="sr-only">open the </span><span
+										th:text="#{products.menu.label}" /> <b class="caret"
+										aria-hidden="true"></b><span class="sr-only"> menu</span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li>
+											<div class="row">
 												<div class="col-xs-12 col-sm-6 col-md-3">
 													<ul>
-														<li><a id="cat_smartphone" th:href="@{/smartphones}">Smartphones</a></li>
-														<li><a id="cat_tablet" th:href="@{/tablets}">Tablettes</a></li>
-														<li><a id="cat_accessorie" th:href="@{/accessories}">Accessoires</a></li>
+														<li class="dropdown-header"
+															th:text="#{products.dropdown.label}"></li>
+														<li><a th:href="@{/smartphones}"
+															th:text="#{smartphones.dropdown.label}"></a></li>
+														<li><a th:href="@{/tablets}"
+															th:text="#{tablets.dropdown.label}"></a></li>
+														<li><a th:href="@{/accessories}"
+															th:text="#{accessories.dropdown.label}"></a></li>
 													</ul>
 												</div>
-											</ul>
-										</div>
-										<a role="button" class="pull-right" href="#"
-											title="close the menu"> <span class="sr-only">close
-												the menu</span><span class="glyphicon glyphicon-remove"
-											aria-hidden="true"></span>
-										</a>
-									</div>
-								</li>
-							</ul></li>
+												<a role="button" class="pull-right" href="#"
+													title="close the menu"> <span class="sr-only">close
+														the menu</span><span class="glyphicon glyphicon-remove"
+													aria-hidden="true"></span>
+												</a>
+											</div>
+										</li>
+									</ul></li>
 
-						<li><a th:href="@{/userprofile}"
-							th:text="#{user.profile.menu.label}" /></li>
-					</ul>
+								<li><a th:href="@{/userprofile}"
+									th:text="#{user.profile.menu.label}" /></li>
+							</ul>
 
-					<form class="navbar-form navbar-left" action="/shop/search">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search" name="search">
+							<form class="navbar-form navbar-left" action="/shop/search">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search"
+										name="search">
+								</div>
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form>
+
+							<ul class="nav navbar-nav navbar-right">
+								<li><a class="logout-button" th:href="@{/logout}"
+									th:text="#{button.logout.label}" /></li>
+							</ul>
 						</div>
-						<button type="submit" class="btn btn-default">Submit</button>
-					</form>
-
-					<ul class="nav navbar-nav navbar-right">
-						<li><a class="logout-button" th:href="@{/logout}"
-							th:text="#{button.logout.label}" /></li>
-					</ul>
-				</div>
 			</div>
+			<!-- /.nav-collapse -->
 		</nav>
 
 		<div class="page-header-bgd-green col-sm-12 col-md-12">
-			<div class="container row">
+			<div class="container-fluid row">
 				<div
 					class="col-xs-12 col-sm-7 col-md-7 col-xs-offset-0 col-sm-offset-1 col-md-offset-1">
 					<h1 th:text="#{orange.shops.title}" />

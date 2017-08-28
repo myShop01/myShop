@@ -63,7 +63,8 @@ public class ShopController {
 	
 	@RequestMapping(value = "/tablets", method = RequestMethod.GET)
     public String tablettes(Model model) {
-		List<Product> prods = categoryService.findProductsByCategory("tablettes");
+
+		List<Product> prods = categoryService.findProductsByCategory("tablets");
         model.addAttribute(PRODUCT_MODEL, prods);
         model.addAttribute(BRANDS_MODEL, productService.findBrands(prods.toArray(new Product[prods.size()])));
         model.addAttribute(TYPE_ON_LOAD,"tablettes");
