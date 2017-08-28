@@ -36,6 +36,11 @@ public class DefaultController {
 	public String admin() {
 		return "admin";
 	}
+	
+	@GetMapping("/testmenu")
+	public String testmenu() {
+		return "testmenu";
+	}
 
 	@GetMapping("/userprofile")
 	public String userprofile(Model m) {

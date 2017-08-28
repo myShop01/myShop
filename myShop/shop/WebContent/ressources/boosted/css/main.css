@@ -198,3 +198,18 @@ body {
 		font-size: 2.4em;
 	}
 }
+
+.row.display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.display-flex > [class*='col-'] {
+  flex-grow: 1;
+}
+
+/* only for demo not required */
+.box {
+    border:1px #ffffff solid;
+    height: 100%;
+}
+
