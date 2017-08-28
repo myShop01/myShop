@@ -26,7 +26,7 @@ public class ShopTestService {
 
 	@Test
 	public void testAll() {
-		Product[] products = service.findAll();
+		List<Product> products = service.findAll();
 		
 		assertNotNull(products);
 	}
@@ -40,28 +40,28 @@ public class ShopTestService {
 	
 	@Test
 	public void testByCriteria() {
-		Product[] products = service.findByCriteria("type", "iphones");
+		List<Product> products = service.findByCriteria("type", "iphones");
 		
 		assertNotNull(products);
 	}
 	
 	@Test
 	public void testBrands() {
-		List<String> products = service.findBrands(service.findAll());
+		List<String> products = service.findBrands(service.findAll().toArray(new Product[service.findAll().size()]));
 		
 		assertNotNull(products);
 	}
 	
 	@Test
 	public void testRams() {
-		List<Long> products = service.findRams(service.findAll());
+		List<Long> products = service.findRams(service.findAll().toArray(new Product[service.findAll().size()]));
 		
 		assertNotNull(products);
 	}
 	
 	@Test
 	public void testCams() {
-		List<Long> products = service.findAppereilPhotos(service.findAll());
+		List<Long> products = service.findAppereilPhotos(service.findAll().toArray(new Product[service.findAll().size()]));
 		
 		assertNotNull(products);
 	}

@@ -6,10 +6,12 @@ import com.sofrecom.myshop.model.Product;
 
 public interface ProductIService {
 	
-	public Product[] findAll();
+	public List<Product> findAll();
 	public Product findById(Long id);
-	public Product[] findByCriteria(String criteria, Object key);
+	public List<Product> findByCriteria(String criteria, Object key);
 	public List<String> findBrands(Product[] products);
 	public List<Long> findAppereilPhotos(Product[] products);
 	public List<Long> findRams(Product[] products);
+	public List<Product> findByFilters(String type, String orderPrice,
+			String orderName, String search, String brand, String priceMin, String priceMax);
 }

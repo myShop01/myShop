@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Shop</title>
+
+<link rel="stylesheet"
+	th:href="@{/ressources/boosted/css/orangeHelvetica.css}" />
+<link rel="stylesheet"
+	th:href="@{/ressources/boosted/css/orangeIcons.css}" />
+<link th:href="@{/ressources/boosted/css/bootstrap-orange2015.css}"
+	rel="stylesheet">
+<link th:href="@{/ressources/boosted/css/boosted2015.css}"
+	rel="stylesheet" />
+<link th:href="@{/ressources/boosted/css/main.css}" rel="stylesheet">
+
+<link th:href="@{/ressources/style.css}" rel="stylesheet">
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<link
+	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+	rel="stylesheet">
+
+<link th:href="@{/ressources/noUiSlider/nouislider.min.css}"
+	rel="stylesheet">
+
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
+
+</head>
+
+
+
+<body>
+
+
+
+	<div th:replace="fragments/header :: header" />
+
+	<div class="col-sm-12 col-md-12 col-lg-10 col-lg-offset-1">
+
+		<br /> <br />
+
+		<div class="col-sm-12 col-md-3">
+			<div class="panel panel-default col-sm-12 col-md-11"
+				style="border: 1.5pt solid #000">
+				<div class="panel-body">
+					<form class="filterForm">
+
+						<div class="section">
+							<h5>Categorie</h5>
+							<div class="checkbox">
+								<label><input type="checkbox" name="type"
+									th:checked="${smartphones_checked}" value="smartphones">Smartphones</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" name="type"
+									th:checked="${tablets_checked}" value="tablettes">Tablettes</label>
+							</div>
+							<div class="checkbox">
+								<label><input type="checkbox" name="type"
+									th:checked="${accessories_checked}" value="accessoires">Accessoires</label>
+							</div>
+						</div>
+
+						<div class="section" th:if="${marques.size()>1}">
+							<h5>Marque</h5>
+							<div class="checkbox" th:each="marque : ${marques}">
+								<label><input type="checkbox" name="brand"
+									th:value="${marque}"><span th:text="${marque}">option</span></label>
+							</div>
+						</div>
+
+						<div class="section">
+							<h5>Prix</h5>
+							<div id="container">
+								<div id="noUiSlider"></div>
+								&euro; <span id="slider-snap-value-lower">0.00</span> <span
+									style="float: right">&euro; <span
+									id="slider-snap-value-upper">2000.00</span></span>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+
+		</div>
+
+
+
+
+		<div class="principal"></div>
+
+
+		<script>
+		$(function() {
+			$("#noUiSlider").noUiSlider({
+				connect : true,
+				start : [ 0, 2000 ],
+				range : {
+					'min' : 0,
+					'max' : 2000
+				},
+				step : 10
+			});
+		});
+
+		$("#noUiSlider").on('slide', function(values, handle) {
+			$("#slider-snap-value-lower").text($(this).val()[0]);
+			$("#slider-snap-value-upper").text($(this).val()[1]);
+		});
+		
+
+		/*$("#noUiSlider").on('change', function(values, handle) {
+					window.location.replace(window.location.href.split('?')[0] + '?pricemin='
+							+ $(this).val()[0].split('.')[0] + '&pricemax='
+							+ $(this).val()[1].split('.')[0]);
+				});*/
+				
+				
+				
+				
+		
+	</script>
+
+		<script th:inline="javascript">
+	/*<![CDATA[*/
+	           
+	           var orderName="";
+	           var orderPrice="asc";
+	           
+	$(".filterForm").change(function(){
+		
+		var brand="";
+		
+		var type="";
+		
+		$("input[name='type']:checked").each(function(){
+			type+=$(this).val()+",";
+		})
+		
+		$("input[name='brand']:checked").each(function(){
+			console.log("brand", $(this).checked, $(this).val())
+			brand+=$(this).val()+",";
+		})
+		
+		var priceMin=$("#noUiSlider").val()[0].split('.')[0];
+		var priceMax=$("#noUiSlider").val()[1].split('.')[0];
+		
+		var url="http://localhost:8080/shop/options?type="+type+"&search="+[[${searchedItem}]]+"&brand="+brand+"&priceMin="+priceMin+"&priceMax="+priceMax+"&orderPrice="+orderPrice+"&orderName="+orderName;
+		
+		$(".principal").last().load(url , function() {
+			console.log("change performed", url);
+		});
+	})
+	
+	$('.dropDownListItemNom').click(function(e){
+		
+		orderName=e.currentTarget.getAttribute("data-name");
+        orderPrice="";
+        
+        $(".filterForm").change();
+    });
+	
+	$('.dropDownListItemPrix').click(function(e) {
+		
+		orderName="";
+        orderPrice=e.currentTarget.getAttribute("data-name");
+        
+        $(".filterForm").change();
+    });
+	/*]]>*/
+	</script>
+
+		<script th:inline="javascript">
+	/*<![CDATA[*/
+	$(function(){
+		$(".principal").last().load("http://localhost:8080/shop/options?search="+[[${searchedItem}]]+"&orderPrice="+orderPrice+"&orderName="+orderName , function() {
+ 			console.log("change performed");
+		});
+	})
+	/*]]>*/
+	</script>
+
+		<script
+			th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
+		<script th:src="@{/ressources/boosted/js/boosted.js}"></script>
+</body>
+</html>

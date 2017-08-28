@@ -14,13 +14,13 @@
 <link th:href="@{/ressources/boosted/css/bootstrap-orange2015.css}"
 	rel="stylesheet">
 <link th:href="@{/ressources/boosted/css/boosted2015.css}"
-	rel="stylesheet">
-
+	rel="stylesheet"/>
 <link th:href="@{/ressources/boosted/css/main.css}" rel="stylesheet">
 
 <link th:href="@{/ressources/style.css}" rel="stylesheet">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link
 	href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
 	rel="stylesheet">
@@ -49,141 +49,65 @@
 			<div class="panel panel-default col-sm-12 col-md-11"
 				style="border: 1.5pt solid #000">
 				<div class="panel-body">
-
-					<div class="section">
-						<h4>Affinez vos resultats</h4>
-						<div class="input-group">
-							<input type="text" class="form-control">
-							<div class="input-group-btn">
-								<button type="button" class="btn btn-default" aria-label="Help">
-									<span class="icon-search"></span>
-								</button>
+					<form class="filterForm">
+						<div class="section">
+							<h4>Affinez vos resultats</h4>
+							<div class="input-group">
+								<input type="text" class="form-control" id="search">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-default" aria-label="Help">
+										<span class="icon-search"></span>
+									</button>
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="section">
-						<h5>Categorie</h5>
-						<form id="categoryForm">
-							<div class="checkbox">
-							    <label><input type="checkbox" name="brand" th:checked="${smartphones_checked}" value="smartphones">Smartphones</label>
-							</div>
-							<div class="checkbox">
-							    <label><input type="checkbox" name="brand" th:checked="${tablets_checked}" value="tablettes">Tablettes</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" name="brand" th:checked="${accessories_checked}" value="accessoires">Accessoires</label>
-							</div>
-						</form>
-					</div>
+						<!-- 						<div class="section"> -->
+						<!-- 							<h5>Categorie</h5> -->
+						<!-- 							<div class="checkbox"> -->
+						<!-- 								<label><input type="checkbox" name="brand" -->
+						<!-- 									th:checked="${smartphones_checked}" value="smartphones">Smartphones</label> -->
+						<!-- 							</div> -->
+						<!-- 							<div class="checkbox"> -->
+						<!-- 								<label><input type="checkbox" name="brand" -->
+						<!-- 									th:checked="${tablets_checked}" value="tablettes">Tablettes</label> -->
+						<!-- 							</div> -->
+						<!-- 							<div class="checkbox"> -->
+						<!-- 								<label><input type="checkbox" name="brand" -->
+						<!-- 									th:checked="${accessories_checked}" value="accessoires">Accessoires</label> -->
+						<!-- 							</div> -->
+						<!-- 						</div> -->
 
-					<div class="section">
-						<h5>Marque</h5>
-						<form id="brandForm">
-							<div class="checkbox" th:each="marque : ${marques}" >
+						<div class="section" th:if="${marques.size()>1}">
+							<h5>Marque</h5>
+							<div class="checkbox" th:each="marque : ${marques}">
 								<label><input type="checkbox" name="brand"
 									th:value="${marque}"><span th:text="${marque}">option</span></label>
 							</div>
-						</form>
-					</div>
+						</div>
 
-					<div class="section">
-						<h5>Prix</h5>
-						<form id="priceForm">
+						<div class="section">
+							<h5>Prix</h5>
 							<div id="container">
 								<div id="noUiSlider"></div>
 								&euro; <span id="slider-snap-value-lower">0.00</span> <span
 									style="float: right">&euro; <span
 									id="slider-snap-value-upper">2000.00</span></span>
 							</div>
-						</form>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-
-
-		<div class="col-sm-12 col-md-9 col-lg-9">
-
-			<div class="panel panel-default col-sm-12 col-md-12"
-				style="border: 1.5pt solid #000">
-				<div class="panel-body row">
-					<div class="dropdown col-sm-3 col-md-3">
-						<button class="btn btn-default dropdown-toggle" type="button"
-							id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"
-							style="border: 0; width: 100%; height: 100%;">
-							Nom du produit <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-							<li><a href="#">Ascendant</a></li>
-							<li><a href="#">Descendant</a></li>
-						</ul>
-					</div>
-
-					<div class="dropdown col-sm-3 col-md-3">
-						<button class="btn btn-default dropdown-toggle" type="button"
-							id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false" style="border: 0; width: 100%; height: 100%;">
-							Prix <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-							<li><a href="#">Ascendant</a></li>
-							<li><a href="#">Descendant</a></li>
-
-						</ul>
-					</div>
-
-					<div>
-						<h6>
-							<span style="color: orange;"> <span th:text="${products.size()}">0 </span> produits</span> correspond a votre
-							recherche.
-						</h6>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4"
-					th:each="product : ${products}">
-					<div class="thumbnail">
-						<img th:src="@{'/ressources/images/'+${product.url}}"
-							style="height: 180pt;">
-						<div class="caption">
-							<h3 th:text="${product.brand}+' '+${product.name}">Phone
-								Name</h3>
-							<h4>
-								&euro; <span th:text="${product.price}">00.00</span>
-							</h4>
-							<p>
-								<a href="detail.html" th:href="@{/details(id=${product.id})}"
-									class="btn btn-primary" role="button">Details</a>
-							</p>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
-			<nav aria-label="Page navigation">
-				<ul class="pagination">
-					<li class="bordered"><a href="#"> <span
-							aria-hidden="true" class="icon-arrow-previous"></span> <span
-							class="sr-only">previous</span>
-					</a></li>
-					<li><a href="#">1</a></li>
-					<li class="bordered"><a href="#"> <span aria-hidden="true"
-							class="icon-arrow-next"></span> <span class="sr-only">next</span>
-					</a></li>
-				</ul>
-			</nav>
+
 		</div>
 
 
+		
 
-	</div>
+			<div class="principal"></div>
+			
 
-	<script>
+		<script>
 		$(function() {
 			$("#noUiSlider").noUiSlider({
 				connect : true,
@@ -207,14 +131,69 @@
 							+ $(this).val()[0].split('.')[0] + '&pricemax='
 							+ $(this).val()[1].split('.')[0]);
 				});*/
+				
+				
+				
+				
 		
 	</script>
 
+		<script th:inline="javascript">
+	/*<![CDATA[*/
+	           
+	           var orderName="";
+	           var orderPrice="asc";
+	           
+	$(".filterForm").change(function(){
+		
+		var search = $("#search").val();
+		var brand="";
+		
+		$("input[name='brand']:checked").each(function(){
+			console.log("brand", $(this).checked, $(this).val())
+			brand+=$(this).val()+",";
+		})
+		
+		var priceMin=$("#noUiSlider").val()[0].split('.')[0];
+		var priceMax=$("#noUiSlider").val()[1].split('.')[0];
+		
+		var url="http://localhost:8080/shop/options?type="+[[${typeOnLoad}]]+"&search="+search+"&brand="+brand+"&priceMin="+priceMin+"&priceMax="+priceMax+"&orderPrice="+orderPrice+"&orderName="+orderName;
+		
+		$(".principal").last().load(url , function() {
+			console.log("change performed", url);
+		});
+	})
+	
+	$('.dropDownListItemNom').click(function(e){
+		
+		orderName=e.currentTarget.getAttribute("data-name");
+        orderPrice="";
+        
+        $(".filterForm").change();
+    });
+	
+	$('.dropDownListItemPrix').click(function(e) {
+		
+		orderName="";
+        orderPrice=e.currentTarget.getAttribute("data-name");
+        
+        $(".filterForm").change();
+    });
+	/*]]>*/
+	</script>
 
-    
-	<script
-		th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
-	<script th:src="@{/ressources/boosted/js/boosted.js}"></script>
+		<script th:inline="javascript">
+	/*<![CDATA[*/
+	$(function(){
+		$(".principal").last().load("http://localhost:8080/shop/options?type="+[[${typeOnLoad}]]+"&orderPrice="+orderPrice+"&orderName="+orderName , function() {
+ 			console.log("change performed");
+		});
+	})
+	/*]]>*/
+	</script>
 
+		<script
+			th:src="@{https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js}"></script>
+		<script th:src="@{/ressources/boosted/js/boosted.js}"></script>
 </body>
 </html>

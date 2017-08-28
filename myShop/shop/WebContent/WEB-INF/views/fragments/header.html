@@ -50,12 +50,12 @@
 									<div class="row">
 										<div class="col-xs-12 col-sm-6 col-md-3">
 											<ul>
-												<li><a id ="device" th:href="@{/products}">Appareils</a></li>
+												<li><a id="device" th:href="@{/products}">Appareils</a></li>
 												<div class="col-xs-12 col-sm-6 col-md-3">
 													<ul>
-														<li><a  id ="cat_smartphone" th:href="@{/smartphones}">Smartphones</a></li>
-														<li><a id ="cat_tablet" th:href="@{/tablets}">Tablettes</a></li>
-														<li><a id ="cat_accessorie" th:href="@{/accessories}">Accessoires</a></li>
+														<li><a id="cat_smartphone" th:href="@{/smartphones}">Smartphones</a></li>
+														<li><a id="cat_tablet" th:href="@{/tablets}">Tablettes</a></li>
+														<li><a id="cat_accessorie" th:href="@{/accessories}">Accessoires</a></li>
 													</ul>
 												</div>
 											</ul>
@@ -72,6 +72,14 @@
 						<li><a th:href="@{/userprofile}"
 							th:text="#{user.profile.menu.label}" /></li>
 					</ul>
+
+					<form class="navbar-form navbar-left" action="/shop/search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search" name="search">
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+
 					<ul class="nav navbar-nav navbar-right">
 						<li><a class="logout-button" th:href="@{/logout}"
 							th:text="#{button.logout.label}" /></li>
