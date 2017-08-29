@@ -58,7 +58,7 @@ public class ProductServiceImpl implements ProductIService{
 
 	@Override
 	public List<Product> findByFilters(String type, String orderPrice,
-			String orderName, String search, String brand, String priceMin, String priceMax) {
+			String orderName, String search, String brand, String priceMin, String priceMax, String page, String limit) {
 		
 		String url="http://localhost:3000/products?";
 		
@@ -85,7 +85,8 @@ public class ProductServiceImpl implements ProductIService{
 			}
 		}
 		
-		url+="price_gte="+priceMin+"&price_lte="+priceMax;
+		url+="price_gte="+priceMin+"&price_lte="+priceMax+"&";
+		url+="_page="+page+"&_limit="+limit;
 		
 		return Arrays.asList(restTemplate.getForObject(url, Product[].class));
 	}

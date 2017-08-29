@@ -29,6 +29,13 @@ public class ShopController {
 	public static final String DETAIL_URL="detail";
 	
 	public static final String TYPE_ON_LOAD="typeOnLoad";
+	public static final String ORDER_PRICE_ON_LOAD="orderPriceOnLoad";
+	public static final String ORDER_NAME_ON_LOAD="orderNameOnLoad";
+	public static final String SEARCH_ON_LOAD="searchOnLoad";
+	public static final String BRAND_ON_LOAD="brandOnLoad";
+	public static final String PRICE_MIN_ON_LOAD="priceMinOnLoad";
+	public static final String PRICE_MAX_ON_LOAD="priceMaxOnLoad";
+	public static final String PAGE_ON_LOAD="pageOnLoad";
 	
 	public static final String RECORD_SIZE="recordsSize";
 	
@@ -67,7 +74,7 @@ public class ShopController {
 		List<Product> prods = categoryService.findProductsByCategory("tablets");
         model.addAttribute(PRODUCT_MODEL, prods);
         model.addAttribute(BRANDS_MODEL, productService.findBrands(prods.toArray(new Product[prods.size()])));
-        model.addAttribute(TYPE_ON_LOAD,"tablettes");
+        model.addAttribute(TYPE_ON_LOAD,"tablets");
         return SHOP_URL;
     }
 	
@@ -98,13 +105,23 @@ public class ShopController {
     		@RequestParam(value="brand", required=false, defaultValue="") String brand,
     		@RequestParam(value="priceMin", required=false, defaultValue="0") String priceMin,
     		@RequestParam(value="priceMax", required=false, defaultValue="2000") String priceMax,
+    		@RequestParam(value="page", required=false, defaultValue="1") String page,
     		Model model) {
-		List<Product> prods = productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax);
+		List<Product> prods = productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax, page, "15");
 		
 		model.addAttribute(TYPE_ON_LOAD,type);
+		
+		model.addAttribute(ORDER_PRICE_ON_LOAD, orderPrice);
+		model.addAttribute(ORDER_NAME_ON_LOAD, orderName);
+		model.addAttribute(SEARCH_ON_LOAD, search);
+		model.addAttribute(BRAND_ON_LOAD, brand);
+		model.addAttribute(PRICE_MIN_ON_LOAD, priceMin);
+		model.addAttribute(PRICE_MAX_ON_LOAD, priceMax);
+		model.addAttribute(PAGE_ON_LOAD, page);
+		
         model.addAttribute(PRODUCT_MODEL, prods);
         model.addAttribute(BRANDS_MODEL, productService.findBrands(prods.toArray(new Product[prods.size()])));
-        model.addAttribute(RECORD_SIZE, prods.size());
+        model.addAttribute(RECORD_SIZE,productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax, "", "").size());
         
         return "products";
     }

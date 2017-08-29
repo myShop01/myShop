@@ -13,5 +13,5 @@ public interface ProductIService {
 	public List<Long> findAppereilPhotos(Product[] products);
 	public List<Long> findRams(Product[] products);
 	public List<Product> findByFilters(String type, String orderPrice,
-			String orderName, String search, String brand, String priceMin, String priceMax);
+			String orderName, String search, String brand, String priceMin, String priceMax, String page, String limit);
 }
