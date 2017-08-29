@@ -19,8 +19,8 @@
 	<script
 		src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script th:src="@{/ressources/boosted/js/boosted.js}"></script>
-<!-- 	<script -->
-<!-- 		src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script> -->
+	<!-- 	<script -->
+	<!-- 		src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script> -->
 
 
 </div>
@@ -65,7 +65,8 @@
 								</ul>
 							</li>
 						</ul></li>
-
+					<li><a th:href="@{/promos}"
+										th:text="#{promos.dropdown.label}"></a></li>
 					<li><a th:href="@{/userprofile}"
 						th:text="#{user-profile.menu.label}" /></li>
 
