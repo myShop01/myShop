@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<div class="col-sm-12 col-md-9 col-lg-9">
+
+		<div class="panel panel-default col-sm-12"
+			style="border: 1.5pt solid #000">
+			<div class="panel-body row">
+				<form class="filterForm">
+					<div class="dropdown col-sm-3 col-md-3">
+						<button class="btn btn-default dropdown-toggle" type="button"
+							id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+							aria-expanded="false"
+							style="border: 0; width: 100%; height: 100%;">
+							tri par <span class="caret"></span>
+						</button>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<li><a href="#" class="dropDownListItemNom" data-name="asc">Nom
+									du produit ascendant</a></li>
+							<li><a href="#" class="dropDownListItemNom" data-name="desc">Nom
+									du produit descendant</a></li>
+							<li><a href="#" class="dropDownListItemPrix" data-name="asc">Prix
+									ascendant</a></li>
+							<li><a href="#" class="dropDownListItemPrix"
+								data-name="desc">Prix descendant</a></li>
+						</ul>
+					</div>
+				</form>
+				<div>
+					<h6>
+						<span style="color: orange;"> <span
+							th:text="${recordsSize}" class="recordsNum">0 </span>
+							produits
+						</span> correspondent a votre recherche.
+					</h6>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row row-eq display-flex col-sm-12">
+				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4"
+					th:each="product : ${products}">
+					<div class="thumbnail">
+						<img th:src="@{'/ressources/images/'+${product.url}}"
+							style="height: 180pt;">
+						<div class="caption">
+							<h3 th:text="${product.brand}+' '+${product.name}"
+								class="flex-text">Phone Name</h3>
+							<h4>
+								&euro; <span th:text="${product.price}">00.00</span>
+							</h4>
+							<p>
+								<a href="detail.html" th:href="@{/details(id=${product.id})}"
+									class="btn btn-primary" role="button">Details</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<nav aria-label="Page navigation">
+			<ul class="pagination">
+				<li class="bordered"><a href="#"> <span aria-hidden="true"
+						class="icon-arrow-previous"></span> <span class="sr-only">previous</span>
+				</a></li>
+				<!-- 				<li><a href="#">1</a></li> -->
+				<li class="bordered" id="rightArrow"><a href="#"> <span
+						aria-hidden="true" class="icon-arrow-next"></span> <span
+						class="sr-only">next</span>
+				</a></li>
+			</ul>
+		</nav>
+
+	</div>
+
+
+
+
+
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+	$(function(){
+		console.log("heeeeeeeeereeeeee", [[${recordsSize*1.0/15}]], Math.ceil([[${recordsSize*1.0/15}]]));
+		$(".recordsNum").html([[${recordsSize}]]+" ");
+	})
+	
+	$(function(){
+		for(var i=0; i<Math.ceil([[${recordsSize*1.0/15}]]); i++){
+		   $("#rightArrow").before('<li class="page"><a href="#">'+(i+1)+'</a></li>');
+	    }
+		
+		//$(".page:first").attr("class", "page active");
+		 $(".bordered").first().attr("class", "bordered disabled");
+		 $(".page").eq([[${pageOnLoad-1}]]).attr("class", "page active");
+		 
+		 if(!($(".page.active").next(".page").length)){
+	    	   $(".bordered").last().attr("class", "bordered disabled");
+	       }
+		   else if(!($(".page.active").prev(".page").length)){
+	    	   $(".bordered").first().attr("class", "bordered disabled");
+	       }
+		   
+	        if($(".page.active").next(".page").length){
+		        $(".bordered").last().attr("class", "bordered");
+		    }
+	    	if($(".page.active").prev(".page").length){
+		    	$(".bordered").first().attr("class", "bordered");
+		    }
+		 
+		 
+	})
+	/*]]>*/
+	</script>
+
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+		   $(".bordered").last().click(function(){
+			       $(".page.active").attr("class", "page").next(".page").attr("class", "page active");
+
+			       $(".principal").last().load("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
+			 			console.log("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
+					});
+			       
+
+		   })
+		   
+		   
+		   $(".bordered").first().click(function(){
+			       $(".page.active").attr("class", "page").prev(".page").attr("class", "page active");
+			       
+			       $(".principal").last().load("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
+			 			//console.log("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
+					});
+		   })
+		   
+		   $(".page").click(function(){
+			   $(".page.active").attr("class", "page");
+			   $(this).attr("class", "page active");
+			   
+			   $(".principal").last().load("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
+		 			console.log("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
+				});
+		      
+			   
+		   })
+	/*]]>*/
+	</script>
+
+	<script th:src="@{/ressources/boosted/js/bootstrap-rowequalizer.js}"></script>
+	<script>  
+	 		$('.row-eq').rowequalizer();
+ 	</script>
+
+</body>
+</html>

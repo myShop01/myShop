@@ -5,10 +5,11 @@
       "name": "7plus128",
       "brand": "IPhone",
 	  "type": "smartphones",
-      "price": 1.019,
+      "price": 1019,
       "isAvailable": true,
       "id": 1,
 	  "ram": 2,
+	  "segment": "FE",
 	  "appareilPhoto": 12,
       "description": "Ecran Retina HD 5,5\" - Appareil photo grand angle et téléobjectif 12 Mpx - Zoom optique 2x, Zoom numérique jusqu’à 10x - Doté de la plus longue autonomie jamais atteinte sur iPhone -Capteur d’empreinte digitale intégré au nouveau bouton principal - iOS 10"
     },
@@ -21,6 +22,7 @@
       "isAvailable": true,
       "id": 2,
 	  "ram": 2,
+	  "segment": "HE",
 	  "appareilPhoto": 12,
       "description": "Ecran Retina HD 5,5\" - Appareil photo grand angle et téléobjectif 12 Mpx - Zoom optique 2x, Zoom numérique jusqu’à 10x - Doté de la plus longue autonomie jamais atteinte sur iPhone -Capteur d’empreinte digitale intégré au nouveau bouton principal - iOS 10"
     },
@@ -33,6 +35,7 @@
       "isAvailable": true,
       "id": 3,
 	  "ram": 2,
+	  "segment": "FE",
 	  "appareilPhoto": 12,
       "description": "Ecran Retina HD 4,7\" - Appareil photo grand angle et téléobjectif 12 Mpx - Zoom optique 2x, Zoom numérique jusqu’à 10x - Doté de la plus longue autonomie jamais atteinte sur iPhone -Capteur d’empreinte digitale intégré au nouveau bouton principal - iOS 10"
     },
@@ -45,6 +48,7 @@
       "isAvailable": true,
       "id": 4,
 	  "ram": 2,
+	  "segment": "FAD",
 	  "appareilPhoto": 12,
       "description": "Écran Retina HD avec 3D Touch de 4,7\" - Nouvel appareil photo iSight de 12 mégapixels - Zoom optique 2x, Zoom numérique jusqu’à 10x - Nouvelle caméra FaceTime HD de 5 mégapixels avec Retina Flash - Enregistrement vidéo en 4K - iOS 10"
     },
@@ -57,6 +61,7 @@
       "isAvailable": true,
       "id": 5,
 	  "ram": 2,
+	  "segment": "FA",
 	  "appareilPhoto": 12,
       "description": "Ecran Retina 4\" - Nouvel appareil photo iSight de 12 mégapixels - Puce A9  - Enregistrement vidéo en 4K - iOS 9"
     },
@@ -70,6 +75,7 @@
       "isAvailable": true,
       "id": 6,
 	  "ram": 2,
+	  "segment": "FA",
 	  "appareilPhoto": 12,
       "description": "L'iPad mini est pourvu d'un superbe écran de 7,9'', d'une caméra FaceTime HD, d'un appareil photo iSight, de l'assistant vocal Siri, d'une connectivité sans fil ultra-rapide et d'une autonomie pouvant atteindre 10 heures. C'est donc un iPad plus petit, mais pas moins grand. Modèle Wi-Fi et cellulaire. Compatible réseau H+, jusqu' à 42 Mb/s* - iOS6 et iCloud - Écran rétroéclairé par LED de 7,9 pouces - Caméra FaceTime HD"
     },
@@ -82,6 +88,7 @@
       "isAvailable": true,
       "id": 7,
 	  "ram": 2,
+	  "segment": "FA",
 	  "appareilPhoto": 5,
       "description": "Petit, très rapide et puissant. L’iPad mini 3 est encore plus léger. Avec sa nouvelle finition, son capteur Touch ID et ses innovations, il y a plus de raisons que jamais de lui faire une mini place dans votre vie. Compatible 4G (débit jusqu’à 100 Mbit/s), H+ (débit jusqu’à 42 Mbit/s) - Ecran 7,9 pouces - Puce A7 avec architecture 64 bits - Appareil photo iSight 5 Mégapixels"
     },
@@ -94,6 +101,7 @@
       "isAvailable": true,
       "id": 8,
 	  "ram": 2,
+	  "segment": "HA",
 	  "appareilPhoto": 8,
       "description": "6,1 mm. Et vous mesurez à peine tout ce qu’il sait faire. Compatible 4G (débit jusqu’à 150 Mbit/s), H+ (débit jusqu’à 42 Mbit/s) - Écran Retina de 9,7 pouces - Processeur A8X avec architecture 64-bits - Appareil photo iSight 8 Mégapixels avec mise au point automatique"
     },
@@ -106,6 +114,7 @@
       "isAvailable": true,
       "id": 9,
 	  "ram": 2,
+	  "segment": "HAD",
 	  "appareilPhoto": 8,
       "description": "Compatible 4G+ (débit jusqu'à 223 Mbits/s) et 4G (débit jusqu'à 100 Mbits/s ou 150Mbits/s) - Ecran Multi-Touch rétroéclairé par LED de 7,9 pouces - Puce A8 de deuxième génération - Coprocesseur de mouvement M8 - Appareil Photo iSight 8 Mégapixels. Vidéos HD 720P"
     },
@@ -118,6 +127,7 @@
       "price": 600,
       "isAvailable": false,
 	  "ram": 4,
+	  "segment": "FA",
 	  "appareilPhoto": 12,
       "description": "Double SIM - Ecran 5.5\" Super AMOLED - Résolution 2560x1440 (Quad HD) - Processeur Octa-Core Exynos 8890, 2.3GHz - Android 6.0 Marshmallow - RAM 4Go - Mémoire 32Go - Double caméra: 12MP (Arrière), 5MP (Frontale) - Lecteur d'empreintes digitales - 4G - Wifi - Bluetooth - Batterie 3000mAh",
       "id": 10
@@ -131,6 +141,7 @@
       "price": 450,
       "isAvailable": false,
 	  "ram": 3,
+	  "segment": "HA",
 	  "appareilPhoto": 16,
       "description": "Ecran 5.1\" Super AMOLED - Résolution 2560 x 1440 (Quad HD) - Processeur Octa-Core: Quad-core 1.5 GHz Cortex-A53 & Quad-core 2.1 GHz Cortex-A57 - Android 5.0.2 Lollipop - RAM 3 Go - Mémoire 32 Go extensible Jusqu'à 128 Go - 2x Appareils Photos 16 Mégapixels (Arrière), 5 Mégapixels (Frontale) - 3G - Wifi - Bluetooth - GPS"
     },
@@ -142,6 +153,7 @@
       "price": 800,
       "isAvailable": true,
 	  "ram": 4,
+	  "segment": "HA",
 	  "appareilPhoto": 12,
       "id": 12,
       "description": "Ecran Infinity 5.8\" Super AMOLED - Résolution 2960 x 1440 (Quad HD+) - Processeur Exynos 8895 Octo-Core cadencé à 2,3 Ghz - Android 7.0 Nougat - RAM 4 Go - Mémoire 64 Go extensible jusqu'à 256 Go - 2x Appareils Photos 12 MP, 8 MP - Lecteur d'empreintes digitales - 4G - Wifi - Bluetooth - GPS "
@@ -154,6 +166,7 @@
       "price": 599,
       "isAvailable": true,
 	  "ram": 4,
+	  "segment": "HE",
 	  "appareilPhoto": 12,
       "id": 13,
       "description": "Ecran 5.5 Quad HD  - Batterie 3600mAh Charge rapide - Android 7.0 Nougat - RAM 4 Go - Mémoire 64 Go extensible jusqu'à 256 Go - 2x Appareils Photos 12 MP, 8 MP - Lecteur d'empreintes digitales - 4G - Wifi - Bluetooth - GPS - Résistant à l'eau et à la poussière"
@@ -166,6 +179,7 @@
       "price": 169,
       "isAvailable": true,
 	  "ram": 4,
+	  "segment": "HE",
 	  "appareilPhoto": 8,
       "id": 14,
       "description": "Ecran 5 - Batterie 3600mAh Charge rapide - Android 7.0 Nougat - RAM 4 Go - Mémoire 64 Go extensible jusqu'à 256 Go - 2x Appareils Photos 12 MP, 8 MP - Lecteur d'empreintes digitales - 4G - Wifi - Bluetooth - GPS - Résistant à l'eau et à la poussière"
@@ -178,6 +192,7 @@
       "price": 429,
       "isAvailable": true,
 	  "ram": 4,
+	  "segment": "FAD",
 	  "appareilPhoto": 16,
       "id": 15,
       "description": "Certifié IP68, il est étanche à tout, depuis les liquides jusqu’à la poussière - Appareil photo 16 Mp à l'avant comme à l'arrière - Recharge rapide - Connecteur réversible compatible avec le câble USB de type C"
@@ -190,6 +205,7 @@
       "price": 329,
       "isAvailable": true,
 	  "ram": 4,
+	  "segment": "HAD",
 	  "appareilPhoto": 13,
       "id": 16,
       "description": "Certifié IP68, il est étanche à tout, depuis les liquides jusqu’à la poussière - Appareil photo 13 Mp - Recharge rapide - Connecteur réversible compatible avec le câble USB de type C"
@@ -203,6 +219,7 @@
       "isAvailable": true,
       "id": 17,
 	  "ram": 2,
+	  "segment": "HAD",
 	  "appareilPhoto": 8,
       "description": "Ecran 10.1\" - Résolution 1920 x 1200 - ARM Cortex-A53 Octo-Core, 1.6 GHz - Android Marshmallow 6.0 - RAM 2 Go - Mémoire 16 Go - 2x Appareils Photos: 8 MP (Arrière) / 2 MP (Frontale) - 4G - Wifi - Bluetooth - Lecteur de cartes"
     },
@@ -216,6 +233,7 @@
       "price": 200,
       "isAvailable": true,
 	  "ram": 2,
+	  "segment": "HA",
 	  "appareilPhoto": 13,
       "id": 18,
       "description": "Double SIM - Ecran 5.5\"- Résolution 1080 x 1920 Pix - Processeur Octa Core Qualcomm Snapdragon 615 1.5 Ghz - RAM 2Go - Mémoire 32 Go Extensible Jusqu'à 256 Go Via Micro SD - Android 6.0 (Lolipop) - 2x Appareils Photo 13 Mégapixels (Arrière),5 Mégapixels (Frontale) - Batterie 5000 Mah - Wifi - 4G - Bluetooth"
@@ -229,6 +247,7 @@
       "price": 400,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "HA",
 	  "appareilPhoto": 12,
       "id": 19,
       "description": "Ecran 5.2\" IPS-NEO LCD - Processeur Quad-core 2.5 GHz Cortex-A72 & quad-core 1.8 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go Extensible Jusqu'à 128 Go - Appareil Photo Dual 12 Mégapixels - Detection autofocus (Arriére), 8 Mégapixels (Frontale) - Wifi - 4G - GPS - Bluetooth - Batterie 3000mAh"
@@ -241,6 +260,7 @@
       "price": 300,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "FA",
 	  "appareilPhoto": 16,
       "id": 20,
       "description": "Double SIM - Ecran 5.5\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 16 MP (Arrière) dual-LED, 8 MP (Frontale) - Wifi - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -253,6 +273,7 @@
       "price": 279,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "FA",
 	  "appareilPhoto": 13,
       "id": 21,
       "description": "Double SIM - Ecran 5.5\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 16 MP (Arrière) dual-LED, 8 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -265,6 +286,7 @@
       "price": 599,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "FE",
 	  "appareilPhoto": 12,
       "id": 22,
       "description": "Double SIM - Ecran 5.1\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 12 MP (Arrière) dual-LED, 8 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -277,6 +299,7 @@
       "price": 249,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "HE",
 	  "appareilPhoto": 12,
       "id": 23,
       "description": "Double SIM - Ecran 5.2\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 13 MP (Arrière) dual-LED, 8 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -290,6 +313,7 @@
       "price": 349,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "FAD",
 	  "appareilPhoto": 23,
       "id": 24,
       "description": "Double SIM - Ecran 5.2\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -302,6 +326,7 @@
       "price": 199,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "FA",
 	  "appareilPhoto": 13,
       "id": 25,
       "description": "Double SIM - Ecran 5.5\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 13 MP (Arrière) dual-LED, 5 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -314,6 +339,7 @@
       "price": 499,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "HE",
 	  "appareilPhoto": 23,
       "id": 26,
       "description": "Double SIM - Ecran 5.2\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -328,6 +354,7 @@
       "isAvailable": true,
       "id": 27,
 	  "ram": 3,
+	  "segment": "FE",
 	  "appareilPhoto": 13,
       "description": "Fonction Appel Téléphonique - Ecran 6.4\" HD (1280 x720) IPS - Processeur MediaTek MT8735 Quad Core 1.3 GHz - RAM 3 Go - Mémoire 32 Go extensible jusqu'à 64 Go via Micro SD - Android 6.0 Marshmallow - 2x Caméras: 13 MP autofocus (Arrière) , 5MP (Frontale) - WiFi - 4G - Bluetooth 4.0 - GPS - A-GPS - Batterie 4050 mAh"
     },
@@ -341,6 +368,7 @@
       "isAvailable": true,
       "id": 28,
 	  "ram": 4,
+	  "segment": "HAD",
 	  "appareilPhoto": 0,
       "description": "Ecran 11.6\" HD LED - Processeur Intel Pentium N3710, 1.6 GHz , 2 Mo de mémoire cache - Mémoire 4 Go - Disque 500 Go - Carte Graphique Intel HD Graphics - Wifi - Bluetooth - HDMI - Autonomie jusqu'à 11 heures"
     },
@@ -352,6 +380,7 @@
 	  "type": "tablets",
       "price": 350,
 	  "ram": 2,
+	  "segment": "HE",
 	  "appareilPhoto": 0,
       "isAvailable": false,
       "description": "Ecran 10.1\" Multi-touch HD Acer LCD IPS  - Processeur Intel Z3735F, 1.33 Ghz up to 1.83 Ghz , 2 Mo de mémoire cache - RAM 2 Go - Disque 500 Go - Carte graphique Intel HD Graphics - Webcam - Wifi - Bluetooth"
@@ -364,6 +393,7 @@
 	  "type": "accessories",
       "price": 399,
 	  "ram": 2,
+	  "segment": "FE",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Grande autonomie  - Chargement sans fil rapide - Certifiée IP68 - Localisation, GPS, messages SOS"
@@ -376,6 +406,7 @@
 	  "type": "accessories",
       "price": 399,
 	  "ram": 2,
+	  "segment": "FA",
 	  "appareilPhoto": 0,
       "isAvailable": false,
       "description": "Grande autonomie  - Chargement sans fil rapide - Certifiée IP68 - Localisation, GPS, messages SOS"
@@ -388,6 +419,7 @@
 	  "type": "accessories",
       "price": 349,
 	  "ram": 2,
+	  "segment": "FAD",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Image haute définition : une résolution de 3840 x 1920 pixels pour la vidéo et 25,9 Mégapixels pour les photos  - Utilisable en tout lieu"
@@ -400,6 +432,7 @@
 	  "type": "accessories",
       "price": 69,
 	  "ram": 2,
+	  "segment": "HAD",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "La solution idéale pour être toujours proche de votre enfant: localisation en temps réel, alerte sortie de zone, historique de sorties, bouton SOS avec appel vocal  - Le pack contient: une balise GPS Weenect Kids, un chargeur USB, une poche de protection, un guide d’utilisation et une recharge 1 mois"
@@ -412,6 +445,7 @@
 	  "type": "accessories",
       "price": 29,
 	  "ram": 2,
+	  "segment": "HA",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "La solution idéale pour être toujours proche de votre enfant: localisation en temps réel, alerte sortie de zone, historique de sorties, bouton SOS avec appel vocal  - Le pack contient: une balise GPS Weenect Kids, un chargeur USB, une poche de protection, un guide d’utilisation et une recharge 1 mois"
@@ -424,6 +458,7 @@
 	  "type": "accessories",
       "price": 29,
 	  "ram": 2,
+	  "segment": "HE",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Avec seulement 0,3 mm d'épaisseur, ce verre trempé premium d'origine japonaise offre une protection optimale d'indice 9H  - Simple à poser grâce à un procédé d’adhésion instantané sans bulle. Garantie à vie"
@@ -436,6 +471,7 @@
 	  "type": "accessories",
       "price": 24,
 	  "ram": 2,
+	  "segment": "HA",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Conçu pour s’adapter aux formes incurvées du Galaxy S8+  - Cet écran n'affectera pas les propriétés tactiles de votre écran de téléphone - Vous apprécierez la grande facilité de pose sans bulles"
@@ -448,6 +484,7 @@
 	  "type": "accessories",
       "price": 24,
 	  "ram": 2,
+	  "segment": "FAD",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Une protection élégante et efficace !  - Cet étui portefeuille au style fin et épuré dispose d'une doublure en microfibre qui optimisera la protection de votre écran"
@@ -460,6 +497,7 @@
 	  "type": "accessories",
       "price": 19,
 	  "ram": 2,
+	  "segment": "FE",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Une protection élégante et efficace !  - Cet étui à rabat au style fin et épuré dispose d'une doublure en microfibre qui optimisera la protection de votre écran - Vous apprécierez sa fermeture aimantée"
@@ -472,6 +510,7 @@
 	  "type": "accessories",
       "price": 19,
 	  "ram": 2,
+	  "segment": "FA",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Une protection élégante et efficace !  - Cet étui à rabat au style fin et épuré dispose d'une doublure en microfibre qui optimisera la protection de votre écran - Libre accès aux ports, boutons et appareil photo"
@@ -484,6 +523,7 @@
 	  "type": "accessories",
       "price": 49,
 	  "ram": 2,
+	  "segment": "FAD",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Expérience sonore d’exception grâce à la dernière technologie DSP (Digital Sound Processing)  - Adonnez-vous au pixel art et partagez vos oeuvres avec vos amis - Maintenez le bouton snooze enfoncé ou utilisez la fonction de l’app pour enregistrer votre message et surprendre vos proches"
@@ -496,6 +536,7 @@
       "price": 349,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "HE",
 	  "appareilPhoto": 23,
       "id": 41,
       "description": "Double SIM - Ecran 5.5\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -508,6 +549,7 @@
       "price": 149,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "HA",
 	  "appareilPhoto": 13,
       "id": 42,
       "description": "Double SIM - Ecran 5\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -520,6 +562,7 @@
       "price": 149,
       "isAvailable": true,
 	  "ram": 3,
+	  "segment": "HAD",
 	  "appareilPhoto": 13,
       "id": 43,
       "description": "Double SIM - Ecran 5.3\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -623,8 +666,12 @@
 	
   ],
   "users": [
-    { "id": 1, "name": "test", "lastName": "test", "login":"user", "password":"user", "email":"nf.mariem@gmail.com","phoneNumber":"8888888","address":"test Address","gender":"F","age":"25","roles":[{"id":1,"value":"ROLE_USER"}]},
-	{ "id": 1, "name": "testadmin", "lastName": "testadmin", "login":"admin", "password":"admin", "email":"foulen.benfoulen@gmail.com","phoneNumber":"77777777","address":"test Address Foulen","gender":"M","age":"40","roles":[{"id":1,"value":"ROLE_ADMIN"}]}
+    { "id": 1, "name": "testFille", "lastName": "test", "login":"userFille", "password":"userFille", "email":"nf.mariem@gmail.com","phoneNumber":"8888888","address":"test Address","gender":"F","age":"23","roles":[{"id":1,"value":"ROLE_USER"}]},
+	{ "id": 1, "name": "testadminHomme", "lastName": "test", "login":"adminHomme", "password":"adminHomme", "email":"foulen.benfoulen@gmail.com","phoneNumber":"77777777","address":"test Address Foulen","gender":"M","age":"45","roles":[{"id":1,"value":"ROLE_ADMIN"}]},
+	{ "id": 1, "name": "testGarçon", "lastName": "test", "login":"userGarçon", "password":"userGarçon", "email":"nf.mariem@gmail.com","phoneNumber":"8888888","address":"test Address","gender":"M","age":"23","roles":[{"id":1,"value":"ROLE_USER"}]},
+	{ "id": 1, "name": "testAdminFemme", "lastName": "test", "login":"adminFemme", "password":"adminFemme", "email":"foulen.benfoulen@gmail.com","phoneNumber":"77777777","address":"test Address Foulen","gender":"F","age":"45","roles":[{"id":1,"value":"ROLE_ADMIN"}]},
+	{ "id": 1, "name": "testGamin", "lastName": "test", "login":"userGamin", "password":"userGamin", "email":"nf.mariem@gmail.com","phoneNumber":"8888888","address":"test Address","gender":"M","age":"10","roles":[{"id":1,"value":"ROLE_USER"}]},
+	{ "id": 1, "name": "testGamine", "lastName": "test", "login":"userGamine", "password":"userGamine", "email":"foulen.benfoulen@gmail.com","phoneNumber":"77777777","address":"test Address Foulen","gender":"F","age":"10","roles":[{"id":1,"value":"ROLE_USER"}]}
   ],
   "roles": [
     { "id": 1, "value": "ROLE_ADMIN"},
