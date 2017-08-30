@@ -45,7 +45,7 @@
 
 		<div class="container">
 			<div class="row row-eq display-flex col-sm-12">
-				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4" 
+				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4"
 					th:each="product : ${products}" >
 					<div class="thumbnail">
 						<img th:src="@{'/ressources/images/'+${product.url}}"
@@ -54,7 +54,7 @@
 							<h3 th:text="${product.brand}+' '+${product.name}"
 								class="flex-text">Phone Name</h3>
 							<h4>
-								&euro; <span th:text="${product.price}">00.00</span>
+								&euro; <span th:text="${product.promotionPrice}">00.00</span>
 							</h4>
 							<p>
 								<a href="detail.html" th:href="@{/details(id=${product.id})}"
@@ -125,8 +125,8 @@
 		   $(".bordered").last().click(function(){
 			       $(".page.active").attr("class", "page").next(".page").attr("class", "page active");
 
-			       $(".principal").last().load("http://localhost:8080/shop/options/products?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
-			 			console.log("http://localhost:8080/shop/options/products?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
+			       $(".principal").last().load("http://localhost:8080/shop/options/productspromos?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
+			 			console.log("http://localhost:8080/shop/options/productspromos?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
 					});
 			       
 
@@ -136,7 +136,7 @@
 		   $(".bordered").first().click(function(){
 			       $(".page.active").attr("class", "page").prev(".page").attr("class", "page active");
 			       
-			       $(".principal").last().load("http://localhost:8080/shop/options/products?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
+			       $(".principal").last().load("http://localhost:8080/shop/options/productspromos?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
 			 			//console.log("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
 					});
 		   })
@@ -145,8 +145,8 @@
 			   $(".page.active").attr("class", "page");
 			   $(this).attr("class", "page active");
 			   
-			   $(".principal").last().load("http://localhost:8080/shop/options/products?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
-		 			console.log("http://localhost:8080/shop/options?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
+			   $(".principal").last().load("http://localhost:8080/shop/options/productspromos?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]] , function() {
+		 			console.log("http://localhost:8080/shop/options/productspromos?page="+($(".page").index($(".page.active"))+1)+"&type="+[[${typeOnLoad}]]+"&search="+[[${searchOnLoad}]]+"&brand="+[[${brandOnLoad}]]+"&priceMin="+[[${priceMinOnLoad}]]+"&priceMax="+[[${priceMaxOnLoad}]]+"&orderPrice="+[[${orderPriceOnLoad}]]+"&orderName="+[[${orderNameOnLoad}]]);
 				});
 		      
 			   

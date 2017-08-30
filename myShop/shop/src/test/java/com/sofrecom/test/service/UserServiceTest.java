@@ -34,8 +34,8 @@ public class UserServiceTest {
 	@Test
 	public void testFindUserByLoginPass() {
 
-		String login = "user";
-		String password = "user";
+		String login = "userFille";
+		String password = "userFille";
 
 		User user = userService.findUser(login, password);
 		assertNotNull(user);
@@ -46,7 +46,7 @@ public class UserServiceTest {
 
 	@Test
 	public void testFindUserByLogin() {
-		String login = "admin";
+		String login = "adminHomme";
 		User user = userService.findUser(login);
 		assertEquals(user.getLogin(), login);
 	}

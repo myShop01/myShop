@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User findUser(String login, String password) {
 		RestTemplate restTemplate = new RestTemplate();
-		User user = new User();
+		User user = null;
 
 		User[] users = restTemplate.getForObject(REST_URI_PREFIX + "/users?login=" + login + "&password=" + password,
 				User[].class);
@@ -38,9 +38,8 @@ public class UserServiceImpl implements UserService {
 	public User findUser(String login) {
 		
 		RestTemplate restTemplate = new RestTemplate();
-		User user = new User();
-		
-		
+		User user = null;
+
 		User[] users = restTemplate.getForObject(REST_URI_PREFIX + "/users?login=" + login, User[].class);
 
 		if (users.length > 0) {
