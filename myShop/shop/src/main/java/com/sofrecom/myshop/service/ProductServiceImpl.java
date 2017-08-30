@@ -90,6 +90,18 @@ public class ProductServiceImpl implements ProductIService{
 		
 		return Arrays.asList(restTemplate.getForObject(url, Product[].class));
 	}
+
+	@Override
+	public List<Product> findByIds(List<Long> ids) {
+		//TODO: add test method
+		String query="id="+ids.get(0);
+		
+		for(int i=1;i<ids.size();i++){
+			query+="&id="+ids.get(i);
+		}
+		
+		return Arrays.asList(restTemplate.getForObject("http://localhost:3000/promotions?"+query, Product[].class));
+	}
 	
 
 }
