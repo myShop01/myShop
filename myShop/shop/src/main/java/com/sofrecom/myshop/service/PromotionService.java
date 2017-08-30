@@ -7,5 +7,4 @@ import com.sofrecom.myshop.model.SpecificPromotion;
 
 public interface PromotionService {
 	List<SpecificPromotion> findPromotions();
-	List<Product> findProductsPromotions();
 }

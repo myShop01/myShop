@@ -14,7 +14,7 @@
 <link th:href="@{/ressources/boosted/css/bootstrap-orange2015.css}"
 	rel="stylesheet">
 <link th:href="@{/ressources/boosted/css/boosted2015.css}"
-	rel="stylesheet" />
+	rel="stylesheet"/>
 <link th:href="@{/ressources/boosted/css/main.css}" rel="stylesheet">
 
 <link th:href="@{/ressources/style.css}" rel="stylesheet">
@@ -27,6 +27,9 @@
 
 <link th:href="@{/ressources/noUiSlider/nouislider.min.css}"
 	rel="stylesheet">
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/6.2.0/jquery.nouislider.min.js"></script>
@@ -50,20 +53,15 @@
 				style="border: 1.5pt solid #000">
 				<div class="panel-body">
 					<form class="filterForm">
-
 						<div class="section">
-							<h5>Categorie</h5>
-							<div class="checkbox">
-								<label><input type="checkbox" name="type"
-									th:checked="${smartphones_checked}" value="smartphones">Smartphones</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" name="type"
-									th:checked="${tablets_checked}" value="tablettes">Tablettes</label>
-							</div>
-							<div class="checkbox">
-								<label><input type="checkbox" name="type"
-									th:checked="${accessories_checked}" value="accessoires">Accessoires</label>
+							<h4>Affinez vos resultats</h4>
+							<div class="input-group">
+								<input type="text" class="form-control" id="search">
+								<div class="input-group-btn">
+									<button type="button" class="btn btn-default" aria-label="Help">
+										<span class="icon-search"></span>
+									</button>
+								</div>
 							</div>
 						</div>
 
@@ -86,15 +84,15 @@
 						</div>
 					</form>
 				</div>
-			</div>
 
+			</div>
 		</div>
 
 
+		
 
-
-		<div class="principal"></div>
-
+			<div class="principal"></div>
+			
 
 		<script>
 		$(function() {
@@ -113,18 +111,13 @@
 			$("#slider-snap-value-lower").text($(this).val()[0]);
 			$("#slider-snap-value-upper").text($(this).val()[1]);
 		});
-		
 
 		/*$("#noUiSlider").on('change', function(values, handle) {
 					window.location.replace(window.location.href.split('?')[0] + '?pricemin='
 							+ $(this).val()[0].split('.')[0] + '&pricemax='
 							+ $(this).val()[1].split('.')[0]);
 				});*/
-				
-				
-				
-				
-		
+
 	</script>
 
 		<script th:inline="javascript">
@@ -135,13 +128,8 @@
 	           
 	$(".filterForm").change(function(){
 		
+		var search = $("#search").val();
 		var brand="";
-		
-		var type="";
-		
-		$("input[name='type']:checked").each(function(){
-			type+=$(this).val()+",";
-		})
 		
 		$("input[name='brand']:checked").each(function(){
 			console.log("brand", $(this).checked, $(this).val())
@@ -151,7 +139,7 @@
 		var priceMin=$("#noUiSlider").val()[0].split('.')[0];
 		var priceMax=$("#noUiSlider").val()[1].split('.')[0];
 		
-		var url="http://localhost:8080/shop/options/products?type="+type+"&search="+[[${searchedItem}]]+"&brand="+brand+"&priceMin="+priceMin+"&priceMax="+priceMax+"&orderPrice="+orderPrice+"&orderName="+orderName;
+		var url="http://localhost:8080/shop/options/productspromos?page=1&type="+[[${typeOnLoad}]]+"&search="+search+"&brand="+brand+"&priceMin="+priceMin+"&priceMax="+priceMax+"&orderPrice="+orderPrice+"&orderName="+orderName;
 		
 		$(".principal").last().load(url , function() {
 			console.log("change performed", url);
@@ -179,7 +167,7 @@
 		<script th:inline="javascript">
 	/*<![CDATA[*/
 	$(function(){
-		$(".principal").last().load("http://localhost:8080/shop/options/products?search="+[[${searchedItem}]]+"&orderPrice="+orderPrice+"&orderName="+orderName , function() {
+		$(".principal").last().load("http://localhost:8080/shop/options/productspromos?page=1&type="+[[${typeOnLoad}]]+"&orderPrice="+orderPrice+"&orderName="+orderName , function() {
  			console.log("change performed");
 		});
 	})

@@ -139,7 +139,7 @@
 		var priceMin=$("#noUiSlider").val()[0].split('.')[0];
 		var priceMax=$("#noUiSlider").val()[1].split('.')[0];
 		
-		var url="http://localhost:8080/shop/options?page=1&type="+[[${typeOnLoad}]]+"&search="+search+"&brand="+brand+"&priceMin="+priceMin+"&priceMax="+priceMax+"&orderPrice="+orderPrice+"&orderName="+orderName;
+		var url="http://localhost:8080/shop/options/products?page=1&type="+[[${typeOnLoad}]]+"&search="+search+"&brand="+brand+"&priceMin="+priceMin+"&priceMax="+priceMax+"&orderPrice="+orderPrice+"&orderName="+orderName;
 		
 		$(".principal").last().load(url , function() {
 			console.log("change performed", url);
@@ -167,7 +167,7 @@
 		<script th:inline="javascript">
 	/*<![CDATA[*/
 	$(function(){
-		$(".principal").last().load("http://localhost:8080/shop/options?page=1&type="+[[${typeOnLoad}]]+"&orderPrice="+orderPrice+"&orderName="+orderName , function() {
+		$(".principal").last().load("http://localhost:8080/shop/options/products?page=1&type="+[[${typeOnLoad}]]+"&orderPrice="+orderPrice+"&orderName="+orderName , function() {
  			console.log("change performed");
 		});
 	})
