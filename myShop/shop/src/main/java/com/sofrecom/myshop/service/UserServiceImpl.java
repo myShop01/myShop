@@ -36,9 +36,11 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User findUser(String login) {
+		
 		RestTemplate restTemplate = new RestTemplate();
 		User user = new User();
-
+		
+		
 		User[] users = restTemplate.getForObject(REST_URI_PREFIX + "/users?login=" + login, User[].class);
 
 		if (users.length > 0) {

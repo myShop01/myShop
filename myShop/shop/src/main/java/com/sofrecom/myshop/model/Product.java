@@ -12,7 +12,7 @@ public class Product {
 	private String description;
 	private Boolean isAvailable;
 	private String type;
-	private int segment;
+	private String segment;
 
 	public Product() {
 		super();
@@ -98,11 +98,11 @@ public class Product {
 		this.type = type;
 	}
 
-	public int getSegment() {
+	public String getSegment() {
 		return segment;
 	}
 
-	public void setSegment(int segment) {
+	public void setSegment(String segment) {
 		this.segment = segment;
 	}
 
