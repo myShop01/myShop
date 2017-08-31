@@ -211,8 +211,11 @@ public class ProductServiceImpl implements ProductIService {
 				url.append("type=" + b + "&");
 			}
 		}
-
-		url.append("price_gte=" + priceMin + "&price_lte=" + priceMax + "&");
+		
+		if (!"".equals(priceMin) && !"".equals(priceMax)) {
+			url.append("price_gte=" + priceMin + "&price_lte=" + priceMax + "&");
+		}
+		
 		url.append("_page=" + page + "&_limit=" + limit);
 
 		List<Product> products = Arrays.asList(restTemplate.getForObject(
@@ -256,6 +259,13 @@ public class ProductServiceImpl implements ProductIService {
 
 		return Arrays.asList(restTemplate.getForObject(URL_PRODUCTS + "?"
 				+ query, Product[].class));
+	}
+	
+	@Override
+	public String getQueryProductPromo(Long id) {
+
+		StringBuilder query = new StringBuilder("id=" + id + "&");
+		return URL_PRODUCTS + "?" + query;
 	}
 
 	@Override

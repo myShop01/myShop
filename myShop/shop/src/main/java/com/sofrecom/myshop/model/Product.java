@@ -2,17 +2,17 @@ package com.sofrecom.myshop.model;
 
 public class Product {
 
-	private Long id;
-	private Long ram;
-	private Long appareilPhoto;
-	private String url;
-	private String name;
-	private String brand;
-	private Double price;
-	private String description;
-	private Boolean isAvailable;
-	private String type;
-	private String segment;
+	protected Long id;
+	protected Long ram;
+	protected Long appareilPhoto;
+	protected String url;
+	protected String name;
+	protected String brand;
+	protected Double price;
+	protected String description;
+	protected Boolean isAvailable;
+	protected String type;
+	protected String segment;
 
 	public Product() {
 		super();

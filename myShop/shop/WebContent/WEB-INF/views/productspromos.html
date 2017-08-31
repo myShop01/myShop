@@ -35,8 +35,7 @@
 				<div>
 					<h6>
 						<span style="color: orange;"> <span
-							th:text="${recordsSize}" class="recordsNum">0 </span>
-							produits
+							th:text="${recordsSize}" class="recordsNum">0 </span> produits
 						</span> correspondent a votre recherche.
 					</h6>
 				</div>
@@ -46,18 +45,25 @@
 		<div class="container">
 			<div class="row row-eq display-flex col-sm-12">
 				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4"
-					th:each="product : ${products}" >
+					th:each="product : ${products}">
 					<div class="thumbnail box">
 						<img th:src="@{'/ressources/images/'+${product.url}}"
 							style="height: 180pt;">
 						<div class="caption">
 							<h3 th:text="${product.brand}+' '+${product.name}"
 								class="flex-text">Phone Name</h3>
-							<h4>
-								&euro; <span th:text="${product.promotionPrice}">00.00</span>
+							<h4 class="old-price">
+								<s>
+									<span th:text="${product.price}">00.00</span>
+									<span>&euro;</span>
+								</s>
+							</h4>
+							<h4 class="promotion-price">
+									<span th:text="${product.promotionPrice}">00.00 </span>
+									<span>&euro;</span>
 							</h4>
 							<p>
-								<a href="detail.html" th:href="@{/details(id=${product.id})}"
+								<a href="detail.html" th:href="@{/details/detailpromos(id=${product.id})}"
 									class="btn btn-primary" role="button">Details</a>
 							</p>
 						</div>

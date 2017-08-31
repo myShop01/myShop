@@ -39,7 +39,7 @@ public class ShopTestController {
 	public void testProductById(){
 		
 		ExtendedModelMap model = new ExtendedModelMap();
-		String viewName = controller.detail(Long.valueOf(2), model);
+		String viewName = controller.detail("products",Long.valueOf(2), model);
 
 		Product product = (Product) model.get("phone");
 		assertNotNull(product);
