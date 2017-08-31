@@ -23,7 +23,8 @@ public class ProductServiceImpl implements ProductIService {
 
 	@Autowired
 	UserService userService;
-
+	
+	@Autowired
 	PromotionService promotionService;
 
 	public static final String URL_PRODUCTS = "http://localhost:3000/products";

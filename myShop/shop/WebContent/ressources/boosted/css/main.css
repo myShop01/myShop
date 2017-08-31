@@ -236,27 +236,23 @@ body {
 	padding: 4px;
 	margin-bottom: 20px;
 	line-height: 1.42857143;
-	/* background-color: #fff; */
-	/* border: 1px solid #ddd; */
 	border-radius: 4px;
 	-webkit-transition: border .2s ease-in-out;
 	-o-transition: border .2s ease-in-out;
 	transition: border .2s ease-in-out;
 }
 
-.thumbnail-home img{
-	/*height:100%*/
+.product-thumbnails {
+	padding: 5px 5px;
 }
 
 h3.new_p {
-    background-color: #fff;
-    color: #000;
-    text-align: center;
-    padding: 0;
-    font-size: 20px;
-    line-height: 60px;
-    font-weight: 700;
-    width: 215px;
+	background-color: #fff;
+	color: #000;
+	text-align: center;
+	padding: 0;
+	font-size: 20px;
+	line-height: 60px;
+	font-weight: 700;
+	width: 215px;
 }
-
-
