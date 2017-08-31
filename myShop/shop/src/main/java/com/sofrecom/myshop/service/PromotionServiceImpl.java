@@ -2,9 +2,7 @@ package com.sofrecom.myshop.service;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -21,13 +19,13 @@ public class PromotionServiceImpl implements PromotionService {
 
 	@Autowired
 	ProductIService productService;
+	
 
 	@Override
 	public List<SpecificPromotion> findPromotions() {
-		// TODO: add test method
 		RestTemplate restTemplate = new RestTemplate();
 		List<SpecificPromotion> listPromotions = null;
-		List<SpecificPromotion> auxList =null;
+		List<SpecificPromotion> auxList;
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
 
 		SpecificPromotion[] promotions = restTemplate.getForObject(REST_URI_PREFIX + "/promotions",

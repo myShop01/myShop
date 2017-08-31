@@ -76,8 +76,6 @@ public class ProductServiceImpl implements ProductIService {
 		for (Product product : products) {
 			if (!appereilPhotos.contains(product.getAppareilPhoto())
 					&& product.getAppareilPhoto() != 0)
-				if (!appereilPhotos.contains(product.getAppareilPhoto())
-						&& product.getAppareilPhoto() != 0)
 					appereilPhotos.add(product.getAppareilPhoto());
 		}
 		return appereilPhotos;
@@ -129,7 +127,7 @@ public class ProductServiceImpl implements ProductIService {
 				.getAuthentication().getName());
 
 		String segment1 = user.getGender();
-		String segment2 = "";
+		String segment2;
 
 		if (segment1.equals("M")) {
 			segment2 = "F";
@@ -250,7 +248,6 @@ public class ProductServiceImpl implements ProductIService {
 
 	@Override
 	public List<Product> findByIds(List<Long> ids) {
-		// TODO: add test method
 		StringBuilder query = new StringBuilder("id=" + ids.get(0) + "&");
 
 		for (int i = 1; i < ids.size(); i++) {
@@ -284,7 +281,6 @@ public class ProductServiceImpl implements ProductIService {
 
 	@Override
 	public List<Product> findProductsPromotions() {
-		// TODO: add test method
 		List<Long> ids = promotionService.findPromotions().stream()
 				.map(SpecificPromotion::getId).collect(Collectors.toList());
 		return this.findByIds(ids);
