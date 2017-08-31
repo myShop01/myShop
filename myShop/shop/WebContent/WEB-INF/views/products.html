@@ -35,8 +35,7 @@
 				<div>
 					<h6>
 						<span style="color: orange;"> <span
-							th:text="${recordsSize}" class="recordsNum">0 </span>
-							produits
+							th:text="${recordsSize}" class="recordsNum">0 </span> produits
 						</span> correspondent a votre recherche.
 					</h6>
 				</div>
@@ -45,22 +44,35 @@
 
 		<div class="container">
 			<div class="row row-eq display-flex col-sm-12">
-				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4" 
-					th:each="product : ${products}" >
+				<div class="product-thumbnails col-xs-12 col-sm-6 col-md-6 col-lg-4"
+					th:each="product : ${products}">
+					
+					<img th:src="@{'/ressources/images/promoProduit.png'}" th:if="${product.promotionPrice!=null}"
+							style="z-index: 9999999; width: 40%; position: absolute;">
 					<div class="thumbnail box">
 						<img th:src="@{'/ressources/images/'+${product.url}}"
 							style="height: 180pt;">
 						<div class="caption">
 							<h3 th:text="${product.brand}+' '+${product.name}"
 								class="flex-text">Phone Name</h3>
-							<h4>
-								&euro; <span th:text="${product.price}">00.00</span>
-							</h4>
-							<h4 th:if="${product.promotionPrice}">
-								&euro; <span th:text="${product.promotionPrice}">00.00</span>
-							</h4>
+							<span th:if="${product.promotionPrice==null}">
+								<h4>
+									&euro; <span th:text="${product.price}">00.00</span>
+								</h4>
+							</span> 
+							<span th:if="${product.promotionPrice!=null}">
+								<h4 class="old-price">
+								<s>
+									&euro; <span th:text="${product.price}">00.00</span>
+								</s>
+								</h4>
+								<h4 class="promotion-price">
+									&euro; <span th:text="${product.promotionPrice}">00.00</span>
+								</h4>
+							</span>
 							<p>
-								<a href="detail.html" th:href="@{/details/detail(id=${product.id})}"
+								<a href="detail.html"
+									th:href="@{/details/detail(id=${product.id})}"
 									class="btn btn-primary" role="button">Details</a>
 							</p>
 						</div>

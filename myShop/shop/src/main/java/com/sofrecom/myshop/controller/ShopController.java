@@ -149,7 +149,7 @@ public class ShopController {
 			query = productService.getQueryProductsPromos();
 
 			prodsPromos = productService.findByFiltersAndQuery(query, type, orderPrice, orderName, search, brand, priceMin,
-					priceMax, page, limit);
+					priceMax, "", "");
 			
 			listProds = productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax, page,
 					limit);

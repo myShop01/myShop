@@ -1,5 +1,6 @@
 package com.sofrecom.test.service;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 import java.util.List;
@@ -65,7 +66,5 @@ public class ShopTestService {
 		
 		assertNotNull(products);
 	}
-	
-	
 
 }

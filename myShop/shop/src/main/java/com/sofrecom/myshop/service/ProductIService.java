@@ -21,5 +21,4 @@ public interface ProductIService {
 			String orderName, String search, String brand, String priceMin, String priceMax, String page, String limit);
 	public List<Product> findByFiltersAndQuery(String query,String type, String orderPrice,
 			String orderName, String search, String brand, String priceMin, String priceMax, String page, String limit);
-	
 }
