@@ -256,3 +256,12 @@ h3.new_p {
 	font-weight: 700;
 	width: 215px;
 }
+
+.old-price {
+    font-size: 15px;
+}
+
+.promotion-price {
+    color: #ff7900 !important;
+    font-size: 25px;
+}

@@ -93,11 +93,22 @@ public class ShopController {
 		return SHOP_URL;
 	}
 
-	@RequestMapping(value = "/details", method = RequestMethod.GET)
-	public String detail(@RequestParam(value = "id", required = false, defaultValue = "0") Long id, Model model) {
-		Product prod = productService.findById(id);
-		model.addAttribute("phone", prod);
-		return DETAIL_URL;
+	@RequestMapping(value = "/details/{viewId}", method = RequestMethod.GET)
+	public String detail(@PathVariable("viewId") String viewId, @RequestParam(value = "id", required = false, defaultValue = "0") Long id, Model model) {
+		Product product;
+		
+		if (!"detailpromos".equals(viewId)) {
+			 product = productService.findById(id);
+		}
+		else{
+			String query = productService.getQueryProductPromo(id);
+			product = productService.findByFiltersAndQuery(query, "", "", "", "", "", "",
+					"", "", "").get(0);
+		}
+		
+		
+		model.addAttribute("phone", product);
+		return viewId;
 	}
 
 	@RequestMapping(value = "/testMenu", method = RequestMethod.GET)
