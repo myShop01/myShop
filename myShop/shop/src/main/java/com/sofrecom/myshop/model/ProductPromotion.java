@@ -28,9 +28,5 @@ public class ProductPromotion extends Product{
 	public void setPromotionDescription(String promotionDescription) {
 		this.promotionDescription = promotionDescription;
 	}
-	
-	
-	
-	
 
 }
