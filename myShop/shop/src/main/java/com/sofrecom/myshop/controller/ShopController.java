@@ -59,6 +59,7 @@ public class ShopController {
 	@RequestMapping(value = "/promos", method = RequestMethod.GET)
 	public String promos(Model model) {
 		List<Product> products = productService.findProductsPromotions();
+		
 		model.addAttribute(PRODUCT_MODEL, products);
 		model.addAttribute(BRANDS_MODEL, productService.findBrands(products.toArray(new Product[products.size()])));
 		model.addAttribute(TYPE_ON_LOAD, "all");
@@ -125,14 +126,49 @@ public class ShopController {
 			@RequestParam(value = "priceMax", required = false, defaultValue = "2000") String priceMax,
 			@RequestParam(value = "page", required = false, defaultValue = "1") String page, Model model) {
 		
-		List<Product> prods ;
+		List<Product> listProds ;
+		List<Product> prodsPromos ;
+		
+		List<Product> prods = new ArrayList<>();
 		String limit = "15";
 		String query = null;
 
 		if (!"productspromos".equals(viewId)) {
-			prods = productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax, page,
+			
+			query = productService.getQueryProductsPromos();
+
+			prodsPromos = productService.findByFiltersAndQuery(query, type, orderPrice, orderName, search, brand, priceMin,
+					priceMax, page, limit);
+			
+			listProds = productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax, page,
 					limit);
 			
+			
+			
+			for(Product product: listProds){
+				ProductPromotion productPromotion = new ProductPromotion();
+				productPromotion.setId(product.getId());
+				productPromotion.setAppareilPhoto(product.getAppareilPhoto());
+				productPromotion.setBrand(product.getBrand());
+				productPromotion.setDescription(product.getDescription());
+				productPromotion.setIsAvailable(product.getIsAvailable());
+				productPromotion.setName(product.getName());
+				productPromotion.setPrice(product.getPrice());
+				productPromotion.setRam(product.getRam());
+				productPromotion.setSegment(product.getSegment());
+				productPromotion.setType(product.getType());
+				productPromotion.setUrl(product.getUrl());
+				prods.add(productPromotion);
+			}
+			
+			for(Product product: prods){
+				for(Product promo: prodsPromos){
+					if(product.getId()==promo.getId()) { ((ProductPromotion)product).setPromotionPrice(((ProductPromotion)promo).getPromotionPrice());
+					}
+				}
+			}
+			
+			query=null;
 		} else {
 			query = productService.getQueryProductsPromos();
 
