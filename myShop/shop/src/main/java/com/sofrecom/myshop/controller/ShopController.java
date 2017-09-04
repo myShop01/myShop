@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.sofrecom.myshop.common.ListUtils;
 import com.sofrecom.myshop.model.Product;
 import com.sofrecom.myshop.model.ProductPromotion;
 import com.sofrecom.myshop.service.CategoryService;
@@ -104,7 +105,7 @@ public class ShopController {
 		else{
 			String query = productService.getQueryProductPromo(id);
 			product = productService.findByFiltersAndQuery(query, "", "", "", "", "", "",
-					"", "", "").get(0);
+					"").get(0);
 		}
 		
 		
@@ -135,13 +136,13 @@ public class ShopController {
 			@RequestParam(value = "brand", required = false, defaultValue = "") String brand,
 			@RequestParam(value = "priceMin", required = false, defaultValue = "0") String priceMin,
 			@RequestParam(value = "priceMax", required = false, defaultValue = "2000") String priceMax,
-			@RequestParam(value = "page", required = false, defaultValue = "1") String page, Model model) {
+			@RequestParam(value = "page", required = false, defaultValue = "1") int page, Model model) {
 		
 		List<Product> listProds ;
 		List<Product> prodsPromos ;
 		
 		List<Product> prods = new ArrayList<>();
-		String limit = "15";
+		int limit = 15;
 		String query = null;
 
 		if (!"productspromos".equals(viewId)) {
@@ -149,10 +150,9 @@ public class ShopController {
 			query = productService.getQueryProductsPromos();
 
 			prodsPromos = productService.findByFiltersAndQuery(query, type, orderPrice, orderName, search, brand, priceMin,
-					priceMax, "", "");
+					priceMax);
 			
-			listProds = productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax, page,
-					limit);
+			listProds = productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax);
 			
 			
 			
@@ -179,13 +179,19 @@ public class ShopController {
 				}
 			}
 			
-			query=null;
+			//query=null;
 		} else {
 			query = productService.getQueryProductsPromos();
 
 			prods = productService.findByFiltersAndQuery(query, type, orderPrice, orderName, search, brand, priceMin,
-					priceMax, page, limit);
+					priceMax);
 		}
+		
+		
+		
+		model.addAttribute(RECORD_SIZE, prods.size());
+		
+		prods= ListUtils.paginate(prods, page, limit);
 		
 		model.addAttribute(PRODUCT_MODEL, prods);
 		model.addAttribute(TYPE_ON_LOAD, type);
@@ -198,8 +204,8 @@ public class ShopController {
 		model.addAttribute(PAGE_ON_LOAD, page);
 
 		model.addAttribute(BRANDS_MODEL, productService.findBrands(prods.toArray(new Product[prods.size()])));
-		List<Product> record = query !=null ? productService.findByFiltersAndQuery(query,type, orderPrice, orderName, search, brand, priceMin, priceMax, "", "") : productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax, "", "");
-		model.addAttribute(RECORD_SIZE, record.size());
+		/*List<Product> record = query !=null ? productService.findByFiltersAndQuery(query,type, orderPrice, orderName, search, brand, priceMin, priceMax) : productService.findByFilters(type, orderPrice, orderName, search, brand, priceMin, priceMax);
+		model.addAttribute(RECORD_SIZE, record.size());*/
 
 		return viewId;
 	}

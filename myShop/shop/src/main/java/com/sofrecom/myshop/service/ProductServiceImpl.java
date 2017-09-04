@@ -84,7 +84,7 @@ public class ProductServiceImpl implements ProductIService {
 	@Override
 	public List<Product> findByFilters(String type, String orderPrice,
 			String orderName, String search, String brand, String priceMin,
-			String priceMax, String page, String limit) {
+			String priceMax) {
 
 		StringBuilder url = new StringBuilder(URL_PRODUCTS + "?");
 
@@ -113,7 +113,6 @@ public class ProductServiceImpl implements ProductIService {
 		}
 
 		url.append("price_gte=" + priceMin + "&price_lte=" + priceMax + "&");
-		url.append("_page=" + page + "&_limit=" + limit);
 
 		return segmentation(restTemplate.getForObject(url.toString(),
 				Product[].class));
@@ -182,7 +181,7 @@ public class ProductServiceImpl implements ProductIService {
 	@Override
 	public List<Product> findByFiltersAndQuery(String query, String type,
 			String orderPrice, String orderName, String search, String brand,
-			String priceMin, String priceMax, String page, String limit) {
+			String priceMin, String priceMax) {
 		List<Product> productsPromotion = new ArrayList<>();
 		StringBuilder url = new StringBuilder(query);
 
@@ -214,7 +213,6 @@ public class ProductServiceImpl implements ProductIService {
 			url.append("price_gte=" + priceMin + "&price_lte=" + priceMax + "&");
 		}
 		
-		url.append("_page=" + page + "&_limit=" + limit);
 
 		List<Product> products = Arrays.asList(restTemplate.getForObject(
 				new String(url), Product[].class));

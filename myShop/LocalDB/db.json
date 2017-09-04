@@ -22,7 +22,7 @@
       "isAvailable": true,
       "id": 2,
 	  "ram": 2,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 12,
       "description": "Ecran Retina HD 5,5\" - Appareil photo grand angle et téléobjectif 12 Mpx - Zoom optique 2x, Zoom numérique jusqu’à 10x - Doté de la plus longue autonomie jamais atteinte sur iPhone -Capteur d’empreinte digitale intégré au nouveau bouton principal - iOS 10"
     },
@@ -101,7 +101,7 @@
       "isAvailable": true,
       "id": 8,
 	  "ram": 2,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 8,
       "description": "6,1 mm. Et vous mesurez à peine tout ce qu’il sait faire. Compatible 4G (débit jusqu’à 150 Mbit/s), H+ (débit jusqu’à 42 Mbit/s) - Écran Retina de 9,7 pouces - Processeur A8X avec architecture 64-bits - Appareil photo iSight 8 Mégapixels avec mise au point automatique"
     },
@@ -114,7 +114,7 @@
       "isAvailable": true,
       "id": 9,
 	  "ram": 2,
-	  "segment": "HAD",
+	  "segment": "MAD",
 	  "appareilPhoto": 8,
       "description": "Compatible 4G+ (débit jusqu'à 223 Mbits/s) et 4G (débit jusqu'à 100 Mbits/s ou 150Mbits/s) - Ecran Multi-Touch rétroéclairé par LED de 7,9 pouces - Puce A8 de deuxième génération - Coprocesseur de mouvement M8 - Appareil Photo iSight 8 Mégapixels. Vidéos HD 720P"
     },
@@ -141,7 +141,7 @@
       "price": 450,
       "isAvailable": false,
 	  "ram": 3,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 16,
       "description": "Ecran 5.1\" Super AMOLED - Résolution 2560 x 1440 (Quad HD) - Processeur Octa-Core: Quad-core 1.5 GHz Cortex-A53 & Quad-core 2.1 GHz Cortex-A57 - Android 5.0.2 Lollipop - RAM 3 Go - Mémoire 32 Go extensible Jusqu'à 128 Go - 2x Appareils Photos 16 Mégapixels (Arrière), 5 Mégapixels (Frontale) - 3G - Wifi - Bluetooth - GPS"
     },
@@ -153,7 +153,7 @@
       "price": 800,
       "isAvailable": true,
 	  "ram": 4,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 12,
       "id": 12,
       "description": "Ecran Infinity 5.8\" Super AMOLED - Résolution 2960 x 1440 (Quad HD+) - Processeur Exynos 8895 Octo-Core cadencé à 2,3 Ghz - Android 7.0 Nougat - RAM 4 Go - Mémoire 64 Go extensible jusqu'à 256 Go - 2x Appareils Photos 12 MP, 8 MP - Lecteur d'empreintes digitales - 4G - Wifi - Bluetooth - GPS "
@@ -166,7 +166,7 @@
       "price": 599,
       "isAvailable": true,
 	  "ram": 4,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 12,
       "id": 13,
       "description": "Ecran 5.5 Quad HD  - Batterie 3600mAh Charge rapide - Android 7.0 Nougat - RAM 4 Go - Mémoire 64 Go extensible jusqu'à 256 Go - 2x Appareils Photos 12 MP, 8 MP - Lecteur d'empreintes digitales - 4G - Wifi - Bluetooth - GPS - Résistant à l'eau et à la poussière"
@@ -179,7 +179,7 @@
       "price": 169,
       "isAvailable": true,
 	  "ram": 4,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 8,
       "id": 14,
       "description": "Ecran 5 - Batterie 3600mAh Charge rapide - Android 7.0 Nougat - RAM 4 Go - Mémoire 64 Go extensible jusqu'à 256 Go - 2x Appareils Photos 12 MP, 8 MP - Lecteur d'empreintes digitales - 4G - Wifi - Bluetooth - GPS - Résistant à l'eau et à la poussière"
@@ -205,7 +205,7 @@
       "price": 329,
       "isAvailable": true,
 	  "ram": 4,
-	  "segment": "HAD",
+	  "segment": "MAD",
 	  "appareilPhoto": 13,
       "id": 16,
       "description": "Certifié IP68, il est étanche à tout, depuis les liquides jusqu’à la poussière - Appareil photo 13 Mp - Recharge rapide - Connecteur réversible compatible avec le câble USB de type C"
@@ -219,7 +219,7 @@
       "isAvailable": true,
       "id": 17,
 	  "ram": 2,
-	  "segment": "HAD",
+	  "segment": "MAD",
 	  "appareilPhoto": 8,
       "description": "Ecran 10.1\" - Résolution 1920 x 1200 - ARM Cortex-A53 Octo-Core, 1.6 GHz - Android Marshmallow 6.0 - RAM 2 Go - Mémoire 16 Go - 2x Appareils Photos: 8 MP (Arrière) / 2 MP (Frontale) - 4G - Wifi - Bluetooth - Lecteur de cartes"
     },
@@ -233,7 +233,7 @@
       "price": 200,
       "isAvailable": true,
 	  "ram": 2,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 13,
       "id": 18,
       "description": "Double SIM - Ecran 5.5\"- Résolution 1080 x 1920 Pix - Processeur Octa Core Qualcomm Snapdragon 615 1.5 Ghz - RAM 2Go - Mémoire 32 Go Extensible Jusqu'à 256 Go Via Micro SD - Android 6.0 (Lolipop) - 2x Appareils Photo 13 Mégapixels (Arrière),5 Mégapixels (Frontale) - Batterie 5000 Mah - Wifi - 4G - Bluetooth"
@@ -247,7 +247,7 @@
       "price": 400,
       "isAvailable": true,
 	  "ram": 3,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 12,
       "id": 19,
       "description": "Ecran 5.2\" IPS-NEO LCD - Processeur Quad-core 2.5 GHz Cortex-A72 & quad-core 1.8 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go Extensible Jusqu'à 128 Go - Appareil Photo Dual 12 Mégapixels - Detection autofocus (Arriére), 8 Mégapixels (Frontale) - Wifi - 4G - GPS - Bluetooth - Batterie 3000mAh"
@@ -299,7 +299,7 @@
       "price": 249,
       "isAvailable": true,
 	  "ram": 3,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 12,
       "id": 23,
       "description": "Double SIM - Ecran 5.2\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 13 MP (Arrière) dual-LED, 8 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -339,7 +339,7 @@
       "price": 499,
       "isAvailable": true,
 	  "ram": 3,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 23,
       "id": 26,
       "description": "Double SIM - Ecran 5.2\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -368,7 +368,7 @@
       "isAvailable": true,
       "id": 28,
 	  "ram": 4,
-	  "segment": "HAD",
+	  "segment": "MAD",
 	  "appareilPhoto": 0,
       "description": "Ecran 11.6\" HD LED - Processeur Intel Pentium N3710, 1.6 GHz , 2 Mo de mémoire cache - Mémoire 4 Go - Disque 500 Go - Carte Graphique Intel HD Graphics - Wifi - Bluetooth - HDMI - Autonomie jusqu'à 11 heures"
     },
@@ -380,7 +380,7 @@
 	  "type": "tablets",
       "price": 350,
 	  "ram": 2,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 0,
       "isAvailable": false,
       "description": "Ecran 10.1\" Multi-touch HD Acer LCD IPS  - Processeur Intel Z3735F, 1.33 Ghz up to 1.83 Ghz , 2 Mo de mémoire cache - RAM 2 Go - Disque 500 Go - Carte graphique Intel HD Graphics - Webcam - Wifi - Bluetooth"
@@ -432,7 +432,7 @@
 	  "type": "accessories",
       "price": 69,
 	  "ram": 2,
-	  "segment": "HAD",
+	  "segment": "MAD",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "La solution idéale pour être toujours proche de votre enfant: localisation en temps réel, alerte sortie de zone, historique de sorties, bouton SOS avec appel vocal  - Le pack contient: une balise GPS Weenect Kids, un chargeur USB, une poche de protection, un guide d’utilisation et une recharge 1 mois"
@@ -445,7 +445,7 @@
 	  "type": "accessories",
       "price": 29,
 	  "ram": 2,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "La solution idéale pour être toujours proche de votre enfant: localisation en temps réel, alerte sortie de zone, historique de sorties, bouton SOS avec appel vocal  - Le pack contient: une balise GPS Weenect Kids, un chargeur USB, une poche de protection, un guide d’utilisation et une recharge 1 mois"
@@ -458,7 +458,7 @@
 	  "type": "accessories",
       "price": 29,
 	  "ram": 2,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Avec seulement 0,3 mm d'épaisseur, ce verre trempé premium d'origine japonaise offre une protection optimale d'indice 9H  - Simple à poser grâce à un procédé d’adhésion instantané sans bulle. Garantie à vie"
@@ -471,7 +471,7 @@
 	  "type": "accessories",
       "price": 24,
 	  "ram": 2,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 0,
       "isAvailable": true,
       "description": "Conçu pour s’adapter aux formes incurvées du Galaxy S8+  - Cet écran n'affectera pas les propriétés tactiles de votre écran de téléphone - Vous apprécierez la grande facilité de pose sans bulles"
@@ -536,7 +536,7 @@
       "price": 349,
       "isAvailable": true,
 	  "ram": 3,
-	  "segment": "HE",
+	  "segment": "ME",
 	  "appareilPhoto": 23,
       "id": 41,
       "description": "Double SIM - Ecran 5.5\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -549,7 +549,7 @@
       "price": 149,
       "isAvailable": true,
 	  "ram": 3,
-	  "segment": "HA",
+	  "segment": "MA",
 	  "appareilPhoto": 13,
       "id": 42,
       "description": "Double SIM - Ecran 5\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
@@ -562,7 +562,7 @@
       "price": 149,
       "isAvailable": true,
 	  "ram": 3,
-	  "segment": "HAD",
+	  "segment": "MAD",
 	  "appareilPhoto": 13,
       "id": 43,
       "description": "Double SIM - Ecran 5.3\" Full HD IPS - Processeur Qualcomm MSM8953 Snapdragon 625 Octa-core 2.0 GHz Cortex-A53 - Android 6.0 Marshmallow - RAM 3 Go - Mémoire 32 Go up to 256 Go - Double Caméra 23 MP (Arrière) dual-LED, 13 MP (Frontale) - Wifi - Android 5 Lollipop - 4G - GPS - Bluetooth - Batterie 3340mAh - Lecteur d’empreinte digitale"
