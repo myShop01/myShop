@@ -71,7 +71,11 @@
 								</h4>
 							</span>
 							<p>
-								<a href="detail.html"
+								<a href="detail.html" th:if="${product.promotionPrice!=null}"
+									th:href="@{/details/detailpromos(id=${product.id})}"
+									class="btn btn-primary" role="button">Details</a>
+									
+								<a href="detail.html" th:if="${product.promotionPrice==null}"
 									th:href="@{/details/detail(id=${product.id})}"
 									class="btn btn-primary" role="button">Details</a>
 							</p>
